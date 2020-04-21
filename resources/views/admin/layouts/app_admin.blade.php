@@ -7,7 +7,8 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
@@ -38,8 +39,8 @@
                 <ul class="nav navbar-nav">
                     &nbsp;<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Блог</a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Категории</a></li>
-                                <li><a href="#">Материалы</a></li>
+                                <li><a href="{{route('admin.category.index')}}">Категории</a></li>
+                                <li><a href="{{route('admin.article.index')}}">Материалы</a></li>
 
                             </ul>
 
@@ -82,6 +83,7 @@
 </div>
 
 <!-- Scripts -->
+<script src="{{ asset('/vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
 <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
