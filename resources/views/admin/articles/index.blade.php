@@ -7,11 +7,11 @@
         @component('admin.components.breadcrumb')
             @slot('title') Список статьи @endslot
             @slot('parent') Главная @endslot
-            @slot('active') Категории @endslot
+            @slot('active') Статьи @endslot
         @endcomponent
 
         <hr>
-        <a href="{{route('admin.article.create')}}" class="btn btn-primary pull-right"><i class="far fa-plus-square"></i> Создать категорию</a>
+        <a href="{{route('admin.article.create')}}" class="btn btn-primary pull-right"><i class="far fa-plus-square"></i> Создать материал</a>
         <table class="table table-striped">
             <thead>
             <th>Наименование</th>

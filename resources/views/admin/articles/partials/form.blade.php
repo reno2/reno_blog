@@ -28,12 +28,12 @@
 
 <div class="form-group">
     <label for="">Краткое описание</label>
-    <textarea name="description" class="form-control" id="description_short">{{$article->description_short or ''}}</textarea>
+    <textarea name="description_short" class="form-control" id="description_short">{{$article->description_short or ''}}</textarea>
 </div>
 
 <div class="form-group">
     <label for="">Описание</label>
-    <textarea name="description" class="form-control" id="description">{{$article->description or ''}}</textarea>
+    <textarea name="description" class="form-control" id="description">{!! $article->description or ''!!}</textarea>
 </div>
 
 <div class="form-group">
@@ -57,6 +57,8 @@
 
     </select>
 </div>
+
+
 
 <hr>
 <input type="submit" class="btn btn-block btn-primary" value="Добавить категорию">

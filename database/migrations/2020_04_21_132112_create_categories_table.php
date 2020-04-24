@@ -21,6 +21,7 @@ class CreateCategoriesTable extends Migration
             $table->tinyInteger('published')->nullable();
 		        $table->integer('created_by')->nullable();
 		        $table->integer('modified_by')->nullable();
+		        $table->string('image')->nullable();
             $table->timestamps();
         });
     }

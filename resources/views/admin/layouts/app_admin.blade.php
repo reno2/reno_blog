@@ -16,7 +16,7 @@
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-inverse  navbar-static-top">
         <div class="container">
             <div class="navbar-header">
 
@@ -30,20 +30,29 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    На витрину
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
+                    <li >
+                        <a href="{{route('admin.index')}}"  role="button" aria-expanded="false">Панель состояния</a>
+                    </li>
                     &nbsp;<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Блог</a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{route('admin.category.index')}}">Категории</a></li>
-                                <li><a href="{{route('admin.article.index')}}">Материалы</a></li>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{route('admin.category.index')}}">Категории</a></li>
+                            <li><a href="{{route('admin.article.index')}}">Материалы</a></li>
 
-                            </ul>
+                        </ul>
+                    </li>
+                  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Управление пользователями</a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{route('user_managment.user.index')}}">Пользователи</a></li>
 
+
+                        </ul>
                     </li>
                 </ul>
 
@@ -82,8 +91,27 @@
     @yield('content')
 </div>
 
-<!-- Scripts -->
-<script src="{{ asset('/vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
 <script src="{{ asset('js/app.js') }}"></script>
+
+<!-- Scripts -->
+<script src="{{asset('js/ckeditor/ckeditor.js')}}"></script>
+<link href="{{ asset('js/ckeditor/plugins/codesnippet/lib/highlight/styles/default.css') }}" rel="stylesheet">
+<script src="{{ asset('js/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js') }}"></script>
+
+<script>
+    setTimeout(function(){
+        var konten = document.getElementById("description");
+        CKEDITOR.replace(konten,{
+            language:'en-gb'
+        });
+        CKEDITOR.config.allowedContent = true;
+    }, 400)
+</script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
 </body>
 </html>

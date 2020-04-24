@@ -178,7 +178,9 @@ return [
         App\Providers\RouteServiceProvider::class,
 
 		    // Other
-		    Unisharp\Ckeditor\ServiceProvider::class,
+		    App\Providers\BlogServiceProvider::class,
+		    //Unisharp\Ckeditor\ServiceProvider::class,
+		    //JeroenNoten\LaravelCkEditor\ServiceProvider::class,
 
     ],
 

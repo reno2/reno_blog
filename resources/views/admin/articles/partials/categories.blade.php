@@ -12,7 +12,7 @@
 >
 	{!! $delimiter or '' !!}{{$category->title or ''}}
 </option>
-	@if(count($category_list->children) > 0)
+	@if(count($category->children) > 0)
 		@include('admin.articles.partials.categories', [
 			'categories'=> $category->children,
 			'delimiter' => ' - ' . $delimiter
