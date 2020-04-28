@@ -6,6 +6,7 @@ use App\Article;
 use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
 
 class ArticleController extends Controller
 {
@@ -44,7 +45,11 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        $article = Article::create($request->all());
+    		$r = $request->all();
+    		$r['on_front'] = Input::has('on_front') ? true : false;
+    		//dd($r );
+
+        $article = Article::create($r);
         // Categories
 		    if($request->input('categories')):
 					$article->categories()->attach($request->input('categories'));

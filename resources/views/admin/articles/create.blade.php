@@ -3,9 +3,13 @@
 
 @section('content')
     <div class="container">
-        @component('admin.components.breadcrumb')
+        @php $parents = [];
+                $parents[] = ['link' => route('admin.index'), 'title' => 'Главная'];
+                $parents[] = ['link' => route('admin.article.index'), 'title' => 'Материалы'];
+        @endphp
+        @component('admin.components.breadcrumb', ['parents'=>$parents])
             @slot('title') Создание материала @endslot
-            @slot('parent') Главная @endslot
+{{--            @slot('parent') Главная @endslot--}}
             @slot('active') Материал @endslot
         @endcomponent
         <div class="row">

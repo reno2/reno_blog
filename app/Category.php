@@ -10,8 +10,7 @@ class Category extends Model
 {
     //Mass assigned
 
-		protected $fillable = ['title', 'slug', 'parent_id', 'published', 'created_by', 'modifierd_by'];
-
+		protected $fillable = ['title', 'slug', 'image', 'parent_id', 'published', 'created_by', 'modifierd_by'];
 		// Mutators
 		public function setSlugAttribute($value){
 				$this->attributes['slug'] = Str::slug(mb_substr($this->title, 0, 40) . '-' . Carbon::now()->format('dmyHs'), '-');

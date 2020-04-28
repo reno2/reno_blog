@@ -8,6 +8,8 @@
 require('./bootstrap');
 
 
+//require('bootstrap');
+//import '/node_modules/bootstrap/dist/js/bootstrap';
 
 window.Vue = require('vue');
 

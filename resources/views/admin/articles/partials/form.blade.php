@@ -13,7 +13,10 @@
     </select>
 </div>
 
-
+<div class="form-group form-check">
+    <input  type="checkbox" value="1" name="on_front" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Показывать на главной</label>
+</div>
 
 
 <div class="form-group">

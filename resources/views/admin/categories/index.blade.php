@@ -6,7 +6,7 @@
 <div class="container">
     @component('admin.components.breadcrumb')
         @slot('title') Список категорий @endslot
-        @slot('parent') Главная @endslot
+        @slot('parents') Главная @endslot
         @slot('active') Категории @endslot
     @endcomponent
 

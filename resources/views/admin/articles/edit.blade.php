@@ -3,10 +3,14 @@
 
 @section('content')
     <div class="container">
-        @component('admin.components.breadcrumb')
+        @php $parents = [];
+                $parents[] = ['link' => route('admin.index'), 'title' => 'Главная'];
+                $parents[] = ['link' => route('admin.article.index'), 'title' => 'Категории'];
+        @endphp
+        @component('admin.components.breadcrumb', ['parents'=>$parents])
             @slot('title') Редактирование материала @endslot
-            @slot('parent') Главная @endslot
-            @slot('active') Категории @endslot
+{{--            @slot('parents') Главная @endslot--}}
+            @slot('active') редактирование @endslot
         @endcomponent
         <div class="row">
             <form сlass="form-horizontal" action="{{route('admin.article.update', $article)}}" method="post">

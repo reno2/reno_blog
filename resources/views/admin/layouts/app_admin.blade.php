@@ -15,45 +15,43 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="app">
-    <nav class="navbar navbar-inverse  navbar-static-top">
+<div id="app" class="admin">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
         <div class="container">
-            <div class="navbar-header">
 
+            <a class="navbar-brand" href="{{ url('/') }}">
+                На витрину
+            </a>
                 <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    На витрину
-                </a>
-            </div>
 
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    <li >
-                        <a href="{{route('admin.index')}}"  role="button" aria-expanded="false">Панель состояния</a>
-                    </li>
-                    &nbsp;<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Блог</a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{route('admin.category.index')}}">Категории</a></li>
-                            <li><a href="{{route('admin.article.index')}}">Материалы</a></li>
+                <ul class="navbar-nav mr-auto">
 
-                        </ul>
+                    <li class="nav-item dropdown">
+                        <a href="{{route('admin.index')}}" class="nav-link" >Панель состояния</a>
                     </li>
-                  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Управление пользователями</a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{route('user_managment.user.index')}}">Пользователи</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Блог</a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{route('admin.category.index')}}">Категории</a>
+                            <a class="dropdown-item" href="{{route('admin.article.index')}}">Материалы</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="{{route('user_managment.user.index')}}" class="nav-link" >Пользователи</a>
+                    </li>
 
 
-                        </ul>
-                    </li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -111,7 +109,7 @@
 
 <script>hljs.initHighlightingOnLoad();</script>
 
-
+<style>img.img-fluid{width: 100%;}</style>
 
 </body>
 </html>

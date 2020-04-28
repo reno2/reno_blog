@@ -10,6 +10,13 @@ class BlogController extends Controller
 {
     //
 
+		public function front(Request $request){
+				$articles = Article::where('on_front', 1)->take(10)->get();
+
+				return view('blog.home', compact('articles'));
+				//
+		}
+
 		public function category($slug){
 
 				$category = Category::where('slug', $slug)->first();
