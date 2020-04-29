@@ -11949,6 +11949,7 @@ a.text-dark:focus {
 }
 
 .front-end .navbar .navbar-brand {
+  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11973,6 +11974,23 @@ a.text-dark:focus {
   line-height: 100%;
   font-weight: 900;
   color: #009aa8;
+}
+
+.front-end .navbar {
+  padding: 0;
+}
+
+.front-end .navbar .main-menu li a {
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+}
+
+.front-end .navbar .main-menu li.active {
+  background: #009aa8;
+}
+
+.front-end .navbar .main-menu li.active a {
+  color: #fff;
 }
 
 .cart-category {

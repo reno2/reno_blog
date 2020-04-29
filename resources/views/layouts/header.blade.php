@@ -19,10 +19,21 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
+            <ul class="main-menu navbar-nav mr-auto">
                @include('layouts.top_menu', ['categories' => $categories])
             </ul>
+            <div class="navbar-nav search">
+                <form action="">
+                    <div class="search__el">
+                        <input type="text" name="q" id="">
 
+                    </div>
+                    <div class="search__el">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                    {{ csrf_field() }}
+                </form>
+            </div>
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right justify-content-around">
                 <!-- Authentication Links -->

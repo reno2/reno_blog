@@ -39,6 +39,7 @@
 .front-end {
   .navbar {
       .navbar-brand{
+        padding: 0;
         display: flex;
         align-items: center;
         .navbar__text{
@@ -56,6 +57,26 @@
   }
 }
 
+.front-end {
+  .navbar {
+    padding: 0;
+    .main-menu {
+      li {
+        a {
+          padding-top: 30px !important;
+          padding-bottom: 30px !important;
+
+        }
+        &.active{
+          background: #009aa8;
+          a{
+            color:#fff;
+          }
+        }
+      }
+    }
+  }
+}
 .cart-category {
   background: #009aa8;
   display: inline-block;
