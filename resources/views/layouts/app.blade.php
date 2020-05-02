@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
     <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -27,5 +28,18 @@
     <!-- Scripts -->
 
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+    <script>
+        {{--let route = "{{url('/autocomplete')}}"--}}
+        {{--$('#search').typeahead({--}}
+        {{--    source: function(q, process){--}}
+        {{--        return $.get(route, {q:q}, function(data){--}}
+        {{--            console.log(data);--}}
+        {{--            return process.data;--}}
+        {{--        })--}}
+        {{--    }--}}
+        {{--})--}}
+    </script>
 </body>
+
 </html>

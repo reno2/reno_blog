@@ -4,6 +4,26 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:300,900');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700');
 
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/gilroy/Gilroy-Medium.eot?#iefix') format('embedded-opentype'),  url('/fonts/gilroy/Gilroy-Medium.woff') format('woff'), url('/fonts/gilroy/Gilroy-Medium.ttf')  format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/gilroy/Gilroy-Regular.eot?#iefix') format('embedded-opentype'),  url('/fonts/gilroy/Gilroy-Regular.woff') format('woff'), url('/fonts/gilroy/Gilroy-Regular.ttf')  format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/gilroy/Gilroy-Black.eot?#iefix') format('embedded-opentype'),  url('/fonts/gilroy/Gilroy-Black.woff') format('woff'), url('/fonts/gilroy/Gilroy-Black.ttf')  format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+
 // Variables
 //@import "variables";
 
@@ -12,8 +32,18 @@
 //@import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
 @import "node_modules/bootstrap/scss/bootstrap";
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
 *{
   font-family: 'Merriweather', serif;
+}
+
+.f-gilroy{
+  font-family: Gilroy;
+}
+fw900{
+  font-weight: 900;
 }
 
 .dropdown-toggle::after {
@@ -38,11 +68,28 @@
 }
 .front-end {
   .navbar {
+
+      .dmenu__el{
+        flex-grow: 0;
+        &.del__links{
+          flex-grow: 1;
+          justify-content: space-evenly;
+          .nav-item {
+            flex-grow: 1;
+            text-align: center;
+            a {
+              font-family: Gilroy;
+            }
+          }
+        }
+
+      }
       .navbar-brand{
         padding: 0;
         display: flex;
         align-items: center;
         .navbar__text{
+          display: none !important;
           flex-direction: column;
           margin-left: 9px;
           display: flex;
@@ -53,6 +100,7 @@
             color:#009aa8;
           }
         }
+
       }
   }
 }
@@ -77,6 +125,38 @@
     }
   }
 }
+
+.rsearch{
+  form{
+    display:flex;
+    .rsearch__el{
+      .rsearch__input{
+        height: 40px;
+        border: 1px solid #fff;
+        &:focus{
+          outline: none;
+        }
+      }
+      &.rsearch-in{
+        .rsearch-in__input{
+          border-top-left-radius: 20px;
+          border-bottom-left-radius: 20px;
+          padding-left: 20px;
+        }
+      }
+    }
+    .rsearch-btn{
+      .rsearch-btn__submit{
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        background: #fff;
+        width: 55px;
+        color: #009aa8a6;
+      }
+    }
+  }
+}
+
 .cart-category {
   background: #009aa8;
   display: inline-block;
@@ -85,4 +165,18 @@
   border-radius: 10px;
   color: #fff;
   margin-bottom: 10px;
+  a{
+    color: #fff;
+    font-family: Gilroy;
+  }
+}
+
+//info
+.info{
+  margin-bottom: 10px;
+  padding: 14px 20px;
+  &.info_good{
+    background: #f8f9fa;
+    border-left: 3px solid #34ce57;
+  }
 }

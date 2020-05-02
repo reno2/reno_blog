@@ -3,11 +3,11 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="sticky-top navbar navbar-expand-lg navbar-light bg-light">
     <div class="container front-end">
 
         <a class="navbar-brand" href="{{route('front')}}">
-            <img src="{{ asset('images/logo_.png')}}" height="40">
+            <img src="{{ asset('images/logo_.png')}}" height="60">
             <span class="navbar__text">
                 <span>заметки</span>
                 <span>програмиста</span>
@@ -17,25 +17,16 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="dmenu collapse navbar-collapse" id="navbarSupportedContent">
+
             <!-- Left Side Of Navbar -->
-            <ul class="main-menu navbar-nav mr-auto">
+            <ul class="dmenu__el del__links main-menu navbar-nav">
                @include('layouts.top_menu', ['categories' => $categories])
             </ul>
-            <div class="navbar-nav search">
-                <form action="">
-                    <div class="search__el">
-                        <input type="text" name="q" id="">
 
-                    </div>
-                    <div class="search__el">
-                        <button type="submit"><i class="fas fa-search"></i></button>
-                    </div>
-                    {{ csrf_field() }}
-                </form>
-            </div>
+            <search-component ></search-component>
             <!-- Right Side Of Navbar -->
-            <ul class="nav navbar-nav navbar-right justify-content-around">
+            <ul class="dmenu__el del__user nav navbar-nav navbar-right justify-content-around">
                 <!-- Authentication Links -->
                 @guest
                     <li class="mx-2"><a href="{{ route('login') }}">Login</a></li>

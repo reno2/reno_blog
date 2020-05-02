@@ -11,6 +11,8 @@
     <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -44,6 +46,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{route('admin.category.index')}}">Категории</a>
                             <a class="dropdown-item" href="{{route('admin.article.index')}}">Материалы</a>
+                            <a class="dropdown-item" href="{{route('admin.tags.index')}}">Теги</a>
                         </div>
                     </li>
 
@@ -90,6 +93,7 @@
 </div>
 
 <script src="{{ asset('js/app.js') }}"></script>
+@yield('page-script')
 
 <!-- Scripts -->
 <script src="{{asset('js/ckeditor/ckeditor.js')}}"></script>

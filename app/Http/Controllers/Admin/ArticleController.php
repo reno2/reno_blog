@@ -29,8 +29,10 @@ class ArticleController extends Controller
      */
     public function create()
     {
+    		$tags = \App\Tag::all();
     		//dd(Category::with('children')->where('parent_id', 0)->get());
         return view('admin.articles.create', [
+        		'tags' => $tags,
         		'article' => [],
 		        'categories' => Category::with('children')->where('parent_id', 0)->get(),
 		        'delimiter' => ''
@@ -47,13 +49,19 @@ class ArticleController extends Controller
     {
     		$r = $request->all();
     		$r['on_front'] = Input::has('on_front') ? true : false;
-    		//dd($r );
+    	//	dd($r );
+
+
 
         $article = Article::create($r);
         // Categories
 		    if($request->input('categories')):
 					$article->categories()->attach($request->input('categories'));
 		    endif;
+		    if($request->input('tags')):
+				    $article->tags()->attach($request->input('tags'));
+		    endif;
+
 		    return redirect()->route('admin.article.index');
     }
 
@@ -76,9 +84,16 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
+    		$tags = \App\Tag::all();
+    		$tags2 = [];
+    		foreach($tags as $tag){
+    				$tags2[$tag->id] = $tag->name;
+		    }
+
 		    return view('admin.articles.edit', [
 				    'article' => $article,
 				    'categories' => Category::with('children')->where('parent_id', 0)->get(),
+				    'tags' => $tags,
 				    'delimiter' => ''
 		    ]);
     }
@@ -92,7 +107,20 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        $article->update($request->except('slug'));
+		    $r = $request->all();
+		    $r['on_front'] = Input::has('on_front') ? true : false;
+
+		   //dd($r);
+    		$article->update($r);
+
+
+
+        //Tags
+		    $article->tags()->detach();
+		    if($request->input('tags')):
+				    $article->tags()->attach($request->input('tags'));
+		    endif;
+
 
         //Categories
 		    $article->categories()->detach();

@@ -11,7 +11,17 @@
                   {{$article->categories->pluck('title')->first()}}
               </a>
           </div>
-         <p class="card-text">{!! $article->description_short !!}</p>
+
+         <p class="card-text f-gilroy">{!! $article->description_short !!}</p>
+          <div class="card-footer bg-transparent border-success">
+              <div class="tags">
+
+                  @foreach($article->tags()->get()->toArray() as $tag)
+                      <span class="f-gilroy badge badge-secondary">{{$tag['name']}}</span>
+                  @endforeach
+
+              </div>
+          </div>
 
    </div>
 </div>

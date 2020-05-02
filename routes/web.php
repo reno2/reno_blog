@@ -25,11 +25,20 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
 
 	Route::post('/upload/image', 'ImageController@add')->name('img_add');
 
+	Route::resource('/tags', 'TagController', ['as'=> 'admin']);
+
+
 });
+
+Route::get('/autocomplete', "SearchController@search");
+Route::get('/search', "SearchController@index")->name('search');
 
 Route::get('/', 'BlogController@front')->name('front');
 
 
 Auth::routes();
+
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');

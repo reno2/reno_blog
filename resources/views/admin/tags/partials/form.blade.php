@@ -14,7 +14,7 @@
 </div>
 
 <div class="form-group form-check">
-    <input  type="checkbox" @if($article->on_front == true) checked @endif value="" name="on_front" class="form-check-input" id="exampleCheck1">
+    <input  type="checkbox" value="1" name="on_front" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Показывать на главной</label>
 </div>
 
@@ -33,12 +33,9 @@
 
 
 <div class="form-group">
-    <select multiple="" name="tags[]" id="tags">
-        @foreach($tags as $tag)
-            <option value="{{$tag->id}}">{{$tag->name}}</option>
-        @endforeach
-
-
+    <select multiple="" name="e9" id="e9">
+            <option value="AK">Alaska</option>
+            <option value="HI">Hawaii</option>
     </select>
 </div>
 
