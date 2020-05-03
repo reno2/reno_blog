@@ -180,6 +180,7 @@ return [
 		    // Other
 		    App\Providers\BlogServiceProvider::class,
 
+				Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
 		    Intervention\Image\ImageServiceProvider::class,
 		    //Unisharp\Ckeditor\ServiceProvider::class,

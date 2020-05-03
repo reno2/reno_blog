@@ -24030,3 +24030,41 @@ fw900 {
   border-left: 3px solid #34ce57;
 }
 
+.admin .apage .sidebar {
+  font-family: Gilroy;
+  height: 100%;
+  background: #4e73df;
+}
+
+.admin .apage .sidebar .sidebar2__top {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.admin .apage .sidebar .top__dashboard a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.admin .apage .sidebar .top__middle .sidebar__ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.admin .apage .sidebar .top__middle .sidebar__ul .sidebar-heading {
+  padding-left: 15px;
+  font-family: Gilroy;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 11px;
+}
+
+.admin .apage .sidebar .top__middle .sidebar__ul .sul-link a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.admin .apage.marea {
+  background-color: #f8f9fc;
+  width: 100%;
+  overflow-x: hidden;
+}
+

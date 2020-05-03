@@ -7,6 +7,8 @@ use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Str;
+
 
 class ArticleController extends Controller
 {
@@ -107,7 +109,10 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
+
 		    $r = $request->all();
+
+
 		    $r['on_front'] = Input::has('on_front') ? true : false;
 
 		   //dd($r);
