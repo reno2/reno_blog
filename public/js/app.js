@@ -52320,7 +52320,7 @@ exports = module.exports = __webpack_require__(57)(false);
 
 
 // module
-exports.push([module.i, "\n.bounce-enter-active {\n  -webkit-transition: all .3s ease;\n  transition: all .3s ease;\n}\n.bounce-leave-active {\n  -webkit-transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);\n  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);\n}\n.bounce-enter, .bounce-leave-to {\n  -webkit-transform: translateY(10px);\n          transform: translateY(10px);\n  opacity: 0;\n}\n.searche-resalts {\n  position: absolute;\n  bottom: 10px;\n  z-index: 9;\n}\n.searche-resalts .searche-results__wrp {\n    position: absolute;\n    top: 0;\n    background: #fff;\n    width: 270px;\n    -webkit-box-shadow: 0px 6px 11px -5px #0000001a;\n            box-shadow: 0px 6px 11px -5px #0000001a;\n    border-left: 2px solid #bff51c;\n}\n.searche-resalts .searche-results__wrp ul {\n      list-style-type: none;\n      padding-left: 16px;\n      padding-top: 6px;\n}\n", ""]);
+exports.push([module.i, "\n.bounce-enter-active {\n  -webkit-transition: all .3s ease;\n  transition: all .3s ease;\n}\n.bounce-leave-active {\n  -webkit-transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);\n  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);\n}\n.bounce-enter, .bounce-leave-to {\n  -webkit-transform: translateY(10px);\n          transform: translateY(10px);\n  opacity: 0;\n}\n.backend {\n  position: relative;\n}\n.backend .rsearch-in {\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1;\n    -ms-flex-preferred-size: 80%;\n        flex-basis: 80%;\n}\n.backend .rsearch-in .rsearch__input {\n      width: 100%;\n      border-radius: 0 !important;\n      border: 1px solid #e9ecef !important;\n}\n.backend .rsearch-btn {\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1;\n}\n.backend .rsearch-btn .rsearch-btn__submit {\n      border-radius: 0 !important;\n      background: #4e73df !important;\n      width: 55px;\n      color: #ffffff !important;\n      border: 1px solid #4e73df !important;\n}\n.searche-resalts {\n  position: absolute;\n  bottom: 10px;\n  z-index: 9;\n}\n.searche-resalts .searche-results__wrp {\n    position: absolute;\n    top: 0;\n    background: #fff;\n    width: 270px;\n    -webkit-box-shadow: 0px 6px 11px -5px #0000001a;\n            box-shadow: 0px 6px 11px -5px #0000001a;\n    border-left: 2px solid #bff51c;\n}\n.searche-resalts .searche-results__wrp ul {\n      list-style-type: none;\n      padding-left: 16px;\n      padding-top: 6px;\n}\n", ""]);
 
 // exports
 
@@ -52630,6 +52630,9 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        place: String
+    },
     data: function data() {
         return {
             value: null,
@@ -53495,7 +53498,10 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "dmenu__el del__search navbar-nav rsearch" },
+    {
+      staticClass: "dmenu__el del__search navbar-nav rsearch",
+      class: _vm.place
+    },
     [
       _c("form", { attrs: { action: "/search" } }, [
         _c("div", { staticClass: "rsearch__el rsearch-in" }, [

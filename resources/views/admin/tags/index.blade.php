@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <div class="container">
+
         @component('admin.components.breadcrumb')
             @slot('title') Список статьи @endslot
             @slot('parents') Главная @endslot
@@ -23,14 +23,14 @@
         <table class="table table-striped">
             <thead>
             <th>Наименование</th>
-
+            <th>Количество статей</th>
             <th class="text-right">Действия</th>
             </thead>
             <tbody>
             @forelse($tags as $article)
                 <tr>
                     <td>{{$article->name}}</td>
-
+                    <td>{{$article->articles->count()}}</td>
                     <td align="right">
                         <form onsubmit="if(confirm('Удалить?')){return true} else {return false}" action="{{route('admin.tags.destroy', $article)}}" method="post">
                             <input type="hidden" name="_method" value="DELETE">
@@ -61,6 +61,6 @@
 
         </table>
 
-    </div>
+
 
 @endsection

@@ -6,7 +6,7 @@
 
 
 
-    <div class="container">
+
         @php $parents = [];
                 $parents[] = ['link' => route('admin.index'), 'title' => 'Главная'];
                 $parents[] = ['link' => route('admin.article.index'), 'title' => 'Материалы'];
@@ -26,7 +26,7 @@
 
             </form>
         </div>
-    </div>
+
 
 
 @endsection

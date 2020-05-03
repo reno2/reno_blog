@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <div class="container">
+
         @php $parents = [];
                 $parents[] = ['link' => route('admin.index'), 'title' => 'Главная'];
                 $parents[] = ['link' => route('admin.category.index'), 'title' => 'Категории'];
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-    </div>
+
 
 
 @endsection

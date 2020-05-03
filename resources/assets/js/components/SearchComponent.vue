@@ -1,5 +1,5 @@
 <template>
-	<div class="dmenu__el del__search navbar-nav rsearch">
+	<div  :class="place" class="dmenu__el del__search navbar-nav rsearch">
 		<form action="/search">
 			<div class="rsearch__el rsearch-in">
 				<input autocomplete="off" @input="send" placeholder="Поиск..." v-model="value" type="text" name="q" id="search" class="rsearch-in__input rsearch__input">
@@ -30,6 +30,9 @@
 
 <script>
     export default {
+        props: {
+            place: String,
+        },
         data (){
             return {
                 value : null,
@@ -85,6 +88,30 @@
 		opacity: 0;
 	}
 
+	.backend{
+		position: relative;
+			.rsearch-in {
+				flex-grow: 1;
+				flex-basis: 80%;
+				.rsearch__input {
+					width: 100%;
+					border-radius: 0 !important;
+					border:1px solid #e9ecef !important;
+				}
+
+			}
+		.rsearch-btn{
+				flex-grow: 1;
+				.rsearch-btn__submit{
+					border-radius: 0 !important;
+					background: #4e73df !important;
+					width: 55px;
+					color: #ffffff !important;
+					border: 1px solid #4e73df !important;
+				}
+		}
+
+	}
 
 	.searche-resalts{
 		position: absolute;

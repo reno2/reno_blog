@@ -24,7 +24,7 @@
                @include('layouts.top_menu', ['categories' => $categories])
             </ul>
 
-            <search-component ></search-component>
+            <search-component place="front"></search-component>
             <!-- Right Side Of Navbar -->
             <ul class="dmenu__el del__user nav navbar-nav navbar-right justify-content-around">
                 <!-- Authentication Links -->
