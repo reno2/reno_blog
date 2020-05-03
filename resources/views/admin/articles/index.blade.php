@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <div class="container">
+
         @component('admin.components.breadcrumb')
             @slot('title') Список статьи @endslot
             @slot('parents') Главная @endslot
@@ -57,6 +57,6 @@
 
         </table>
 
-    </div>
+
 
 @endsection

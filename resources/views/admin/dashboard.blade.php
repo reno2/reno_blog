@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <div class="container1">
+
         <div class="row">
             <div class="col-sm-3">
                 <div class="jumbotron">
@@ -62,6 +62,6 @@
                 @endforeach
             </div>
         </div>
-    </div>
+
 
 @endsection

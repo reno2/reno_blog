@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <div class="container my-4">
+
     <div class="row">
         <div class="col-md-6">
             <h3>{{$tag->name}} - тег <small class="text-muted">количество постов с тегом  {{$tag->articles()->count()}}</small></h3>
@@ -54,5 +54,5 @@
         </tfoot>
 
     </table>
-    </div>
+
 @endsection

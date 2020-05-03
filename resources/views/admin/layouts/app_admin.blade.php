@@ -25,8 +25,11 @@
                 @include('admin.components.sidebar2')
             </div>
         </div>
-        <div class="apage marea flex-fill p-5">
-            @yield('content')
+        <div class="apage marea flex-fill">
+            @include('admin.components.top')
+            <div class="container-fluid pl-5 pr-5">
+             @yield('content')
+            </div>
         </div>
     </div>
 </div>
