@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Role;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -21,6 +22,11 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+
+		public function showRegistrationForm()
+		{
+				return view('auth.register2');
+		}
 
     /**
      * Where to redirect users after registration.
@@ -62,10 +68,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $userObj = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+        if($userObj){
+		        $userObj->roles()->attach(2);
+		        return $userObj;
+        }
     }
 }

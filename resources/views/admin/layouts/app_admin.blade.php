@@ -11,79 +11,48 @@
     <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="app">
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <div class="navbar-header">
+<div id="app" class="admin">
 
-                <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    &nbsp;<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Блог</a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{route('admin.category.index')}}">Категории</a></li>
-                                <li><a href="{{route('admin.article.index')}}">Материалы</a></li>
-
-                            </ul>
-
-                    </li>
-                </ul>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @guest
-                        <li><a href="{{ route('login') }}">Login</a></li>
-                        <li><a href="{{ route('register') }}">Register</a></li>
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    @endguest
-                </ul>
+    <div class="d-flex justify-content-start admin-apage">
+        <div class="apage">
+            <div class="sidebar">
+                @include('admin.components.sidebar2')
             </div>
         </div>
-    </nav>
-
-    @yield('content')
+        <div class="apage marea flex-fill p-5">
+            @yield('content')
+        </div>
+    </div>
 </div>
 
-<!-- Scripts -->
-<script src="{{ asset('/vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
 <script src="{{ asset('js/app.js') }}"></script>
+@yield('page-script')
+
+<!-- Scripts -->
+<script src="{{asset('js/ckeditor/ckeditor.js')}}"></script>
+<link href="{{ asset('js/ckeditor/plugins/codesnippet/lib/highlight/styles/default.css') }}" rel="stylesheet">
+<script src="{{ asset('js/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js') }}"></script>
+
+<script>
+    setTimeout(function(){
+        var konten = document.getElementById("description");
+        CKEDITOR.replace(konten,{
+            language:'en-gb'
+        });
+        CKEDITOR.config.allowedContent = true;
+    }, 400)
+</script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+<style>img.img-fluid{width: 100%;}</style>
+
 </body>
 </html>

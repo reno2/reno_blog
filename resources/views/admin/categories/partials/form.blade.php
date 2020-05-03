@@ -37,4 +37,5 @@
 </div>
 
 <hr>
-<input type="submit" class="btn btn-block btn-primary" value="Добавить категорию">
+<input type="submit" class="btn btn-block btn-primary" value="@if(isset($category->id)) Изменить @else Добавить @endif категорию">
+

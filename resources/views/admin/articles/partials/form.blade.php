@@ -13,7 +13,10 @@
     </select>
 </div>
 
-
+<div class="form-group form-check">
+    <input  type="checkbox" @if($article->on_front == true) checked @endif value="" name="on_front" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Показывать на главной</label>
+</div>
 
 
 <div class="form-group">
@@ -21,19 +24,32 @@
     <input type="text" name="title" class="form-control" id="name" value="{{$article->title or ''}}">
 </div>
 
+
+
 <div class="form-group">
     <label for="slug">Slug</label>
     <input type="text" name="slug" class="form-control" id="slug" value="{{$article->slug or ''}}" readonly="">
 </div>
 
+
+<div class="form-group">
+    <select multiple="" name="tags[]" id="tags">
+        @foreach($tags as $tag)
+            <option value="{{$tag->id}}">{{$tag->name}}</option>
+        @endforeach
+
+
+    </select>
+</div>
+
 <div class="form-group">
     <label for="">Краткое описание</label>
-    <textarea name="description" class="form-control" id="description_short">{{$article->description_short or ''}}</textarea>
+    <textarea name="description_short" class="form-control" id="description_short">{{$article->description_short or ''}}</textarea>
 </div>
 
 <div class="form-group">
     <label for="">Описание</label>
-    <textarea name="description" class="form-control" id="description">{{$article->description or ''}}</textarea>
+    <textarea name="description" class="form-control" id="description">{!! $article->description or ''!!}</textarea>
 </div>
 
 <div class="form-group">
@@ -57,6 +73,8 @@
 
     </select>
 </div>
+
+
 
 <hr>
 <input type="submit" class="btn btn-block btn-primary" value="Добавить категорию">

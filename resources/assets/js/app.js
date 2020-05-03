@@ -5,16 +5,14 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+require('jquery');
 require('./bootstrap');
 
 
-// CKEDITOR
-document.addEventListener("DOMContentLoaded", () => {
 
-    CKEDITOR.replace( 'description' );
-    CKEDITOR.replace( 'description_short' );
 
-})
+//require('@ttskch/select2-bootstrap4-theme');
+//import '/node_modules/bootstrap/dist/js/bootstrap';
 
 window.Vue = require('vue');
 
@@ -26,6 +24,9 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
+Vue.component('search-component', require('./components/SearchComponent.vue'));
+
 const app = new Vue({
     el: '#app'
 });
+

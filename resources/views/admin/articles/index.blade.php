@@ -6,16 +6,18 @@
     <div class="container">
         @component('admin.components.breadcrumb')
             @slot('title') Список статьи @endslot
-            @slot('parent') Главная @endslot
-            @slot('active') Категории @endslot
+            @slot('parents') Главная @endslot
+            @slot('active') Статьи @endslot
         @endcomponent
 
         <hr>
-        <a href="{{route('admin.article.create')}}" class="btn btn-primary pull-right"><i class="far fa-plus-square"></i> Создать категорию</a>
+        <a href="{{route('admin.article.create')}}" class="mb-3 btn btn-primary pull-right"><i class="far fa-plus-square"></i> Создать материал</a>
         <table class="table table-striped">
             <thead>
             <th>Наименование</th>
             <th>Публикация</th>
+            <th>Категории</th>
+            <th>На главной</th>
             <th class="text-right">Действия</th>
 
             </thead>
@@ -24,6 +26,8 @@
                 <tr>
                     <td>{{$article->title}}</td>
                     <td>{{$article->published}}</td>
+                    <td>{{$article->categories->pluck('title')->first()}}</td>
+                    <td>{{($article->on_front) ? "Да" : "Нет"}}</td>
                     <td>
                         <form onsubmit="if(confirm('Удалить?')){return true} else {return false}" action="{{route('admin.article.destroy', $article)}}" method="post">
                             <input type="hidden" name="_method" value="DELETE">

@@ -13,9 +13,17 @@ class Article extends Model
 				$this->attributes['slug'] = Str::slug(mb_substr($this->title, 0, 40) . '-' . Carbon::now()->format('dmyHi'), '-');
 		}
 
-		protected $fillable = ['title', 'slug', 'description_short', 'description','image','image_show', 'meta_title', 'meta_description', 'viewed' ,'published', 'created_by', 'modifierd_by'];
+		protected $fillable = ['title', 'slug', 'description_short', 'description','image','image_show', 'meta_title', 'meta_description', 'viewed' ,'published', 'created_by', 'modifierd_by', 'on_front'];
 		//plymorphe
 		public function categories(){
 				return $this->morphToMany('App\Category', 'categoryable');
+		}
+
+		public function scopeLastArticles($query, $count){
+				return $query->orderBy('created_at', 'desc')->take($count)->get();
+		}
+
+		public function tags(){
+				return $this->belongsToMany('\App\Tag');
 		}
 }
