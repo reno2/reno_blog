@@ -30,7 +30,9 @@
                 <!-- Authentication Links -->
                 @guest
                     <li class="mx-2"><a href="{{ route('login') }}">Login</a></li>
-                    <li class="mx-2"><a href="{{ route('register') }}">Register</a></li>
+                    @if(\App\SBlog\Core\BlogApp::get_Instance()->getProperty('registration') == 'on')
+                      <li class="mx-2"><a href="{{ route('register') }}">Register</a></li>
+                    @endif
                 @else
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -61,3 +63,6 @@
         </div>
     </div>
 </nav>
+@foreach($categories as $category)
+
+@endforeach

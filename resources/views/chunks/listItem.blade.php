@@ -1,5 +1,5 @@
 
-<div class="my-3 mx-2 card" style="width: 18rem;">
+<div class="my-3 mx-2 card" style="width: 30%;">
 
 
 
@@ -8,16 +8,17 @@
          <h5 class="card-title"><a href="{{route('article', $article->slug)}}">{{$article->title}}</a></h5>
           <div class="cart-category">
               <a href="/blog/category/{{$article->categories->pluck('slug')->first()}}">
-                  {{$article->categories->pluck('title')->first()}}
+                 <i class="fas fa-folder-open"></i> &nbsp; {{$article->categories->pluck('title')->first()}}
               </a>
           </div>
 
          <p class="card-text f-gilroy">{!! $article->description_short !!}</p>
-          <div class="card-footer bg-transparent border-success">
+          <div class="card-footer bg-transparent">
               <div class="tags">
 
                   @foreach($article->tags()->get()->toArray() as $tag)
-                      <span class="f-gilroy badge badge-secondary">{{$tag['name']}}</span>
+                      <a class="tags__item" href="{{route('tag', $tag['name'])}}">{{$tag['name']}}</a>
+
                   @endforeach
 
               </div>

@@ -1,8 +1,9 @@
 
     <div class="sidebar2__top top p-2">
         <div class="top__front">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                На витрину
+            <a class="to_front" href="{{ url('/') }}">
+
+                <i class="fas fa-globe"></i> ВИТРИНА
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,7 +14,7 @@
         <div class="top__dashboard">
             <a class="nav-link" href="{{route('admin.index')}}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span></a>
+                <span>Панель</span></a>
         </div>
         <hr>
         <div class="top__middle">
@@ -28,6 +29,25 @@
                         <a class="dropdown-item" href="{{route('admin.category.index')}}">Категории</a>
                         <a class="dropdown-item" href="{{route('admin.article.index')}}">Материалы</a>
                         <a class="dropdown-item" href="{{route('admin.tags.index')}}">Теги</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <div class="top__middle">
+            <ul class="sidebar__ul sul">
+                <div class="sidebar-heading">
+                    Пользователи
+                </div>
+                <li class="sul-link">
+
+
+                    <div class="dmenu">
+                        <a class="dropdown-item" href="{{route('user_managment.user.index')}}">Список пользователей</a>
+                        <a class="dropdown-item" href="{{route('user_managment.user.create')}}">Создать</a>
+                        <a class="dropdown-item" href="{{route('user_managment.user.create')}}">Роли</a>
+                        <a class="dropdown-item" href="{{route('user_managment.user.create')}}">Создать роль</a>
+
                     </div>
                 </li>
             </ul>

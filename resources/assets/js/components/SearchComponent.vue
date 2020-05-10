@@ -1,6 +1,6 @@
 <template>
-	<div  :class="place" class="dmenu__el del__search navbar-nav rsearch">
-		<form action="/search">
+	<div :class="place" class="dmenu__el del__search navbar-nav rsearch">
+		<form :action="action">
 			<div class="rsearch__el rsearch-in">
 				<input autocomplete="off" @input="send" placeholder="Поиск..." v-model="value" type="text" name="q" id="search" class="rsearch-in__input rsearch__input">
 
@@ -8,8 +8,6 @@
 			<div class="rsearch__el rsearch-btn">
 				<button class="rsearch__input rsearch-btn__submit" type="submit"><i class="fas fa-search"></i></button>
 			</div>
-
-
 
 		</form>
 
@@ -32,6 +30,14 @@
     export default {
         props: {
             place: String,
+		        action: {
+                default: '/search',
+                type: String
+            },
+		        autocomplete: {
+                type: String,
+				        default: '/autocomplete'
+            }
         },
         data (){
             return {
@@ -45,8 +51,9 @@
         },
 		    methods:{
             async send(){
+               console.log(`${this.autocomplete}?q=${this.value}`)
 								if(this.value.length > 2) {
-                    const res = await axios.get('/autocomplete?q=' + this.value)
+                    const res = await axios.get(`${this.autocomplete}?q=${this.value}`)
 										console.log(res)
                     if (res.data.length > 0) {
 												let nData = [];
@@ -54,7 +61,7 @@
                            el.title = (el.title.replace(new RegExp(this.value, "ig"), `<b>${this.value}</b>`));
 
                            nData.push(el)
-                            // console.log(el)
+                             console.log(el)
                             // console.log(this.value)
                         })
                         console.log(nData)
@@ -97,6 +104,7 @@
 					width: 100%;
 					border-radius: 0 !important;
 					border:1px solid #e9ecef !important;
+					background: #e9ecef;
 				}
 
 			}

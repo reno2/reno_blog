@@ -16,11 +16,11 @@
         @endcomponent
         <div class="row">
             <div class="col-sm-9">
-            <form сlass="form-horizontal" action="{{route('admin.category.store')}}" method="post">
+            <form сlass="form-horizontal"  id="aform" action="{{route('admin.category.store')}}" method="post">
                 {{csrf_field()}}
                 {{-- Form include--}}
 
-                @include('admin.categories.partials.form');
+                @include('admin.categories.partials.form')
                 <input type="hidden" name="image" value="" id="category-img">
 
             </form>
@@ -28,7 +28,7 @@
             <div class="col-sm-3">
                 <div class="cart">
                     <div class="card-body">
-                    <form onsubmit="return upload()" action="{{route('img_add')}}"  enctype="multipart/form-data">
+                    <form id="aform" onsubmit="return upload()" action="{{route('img_add')}}"  enctype="multipart/form-data">
 
                         <div class="form-group">
                         <input name="image" type="file" id="file_">
@@ -75,5 +75,6 @@
 
             return false;
         }
+
 
     </script>

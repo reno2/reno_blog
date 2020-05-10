@@ -1,8 +1,15 @@
 .marea-top {
+  box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
   padding: 2rem 3rem 2rem 3rem;
   background: #fff;
+  .search {
+    flex-basis: 390px;
 
+  }
 }
+
+
+
 
 .actions{
   .actions__wrap{
@@ -13,9 +20,27 @@
   }
   .act-item {
     .act-item__wimg {
+      margin-left: 10px;
       .act-item__img {
         width: 40px;
       }
     }
+    .act-item__name{
+      span {
+        font-family: gilroy;
+      }
+    }
+    .act-item__logout{
+      span{
+        margin-left: 10px;
+      }
+      a {
+        font-family: gilroy;
+      }
+    }
   }
 }
+
+
+
+

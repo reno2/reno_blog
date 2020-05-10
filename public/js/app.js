@@ -11951,7 +11951,9 @@ module.exports = function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(12);
-module.exports = __webpack_require__(55);
+__webpack_require__(56);
+__webpack_require__(57);
+module.exports = __webpack_require__(58);
 
 
 /***/ }),
@@ -11967,6 +11969,8 @@ module.exports = __webpack_require__(55);
 
 __webpack_require__(2);
 __webpack_require__(13);
+
+__webpack_require__(75);
 
 //require('@ttskch/select2-bootstrap4-theme');
 //import '/node_modules/bootstrap/dist/js/bootstrap';
@@ -52245,9 +52249,9 @@ function injectStyle (ssrContext) {
 }
 var normalizeComponent = __webpack_require__(10)
 /* script */
-var __vue_script__ = __webpack_require__(50)
+var __vue_script__ = __webpack_require__(51)
 /* template */
-var __vue_template__ = __webpack_require__(54)
+var __vue_template__ = __webpack_require__(55)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52296,7 +52300,7 @@ var content = __webpack_require__(47);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(48)("7acd5075", content, false, {});
+var update = __webpack_require__(49)("7acd5075", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -52315,18 +52319,100 @@ if(false) {
 /* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(57)(false);
+exports = module.exports = __webpack_require__(48)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n.bounce-enter-active {\n  -webkit-transition: all .3s ease;\n  transition: all .3s ease;\n}\n.bounce-leave-active {\n  -webkit-transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);\n  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);\n}\n.bounce-enter, .bounce-leave-to {\n  -webkit-transform: translateY(10px);\n          transform: translateY(10px);\n  opacity: 0;\n}\n.backend {\n  position: relative;\n}\n.backend .rsearch-in {\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1;\n    -ms-flex-preferred-size: 80%;\n        flex-basis: 80%;\n}\n.backend .rsearch-in .rsearch__input {\n      width: 100%;\n      border-radius: 0 !important;\n      border: 1px solid #e9ecef !important;\n}\n.backend .rsearch-btn {\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1;\n}\n.backend .rsearch-btn .rsearch-btn__submit {\n      border-radius: 0 !important;\n      background: #4e73df !important;\n      width: 55px;\n      color: #ffffff !important;\n      border: 1px solid #4e73df !important;\n}\n.searche-resalts {\n  position: absolute;\n  bottom: 10px;\n  z-index: 9;\n}\n.searche-resalts .searche-results__wrp {\n    position: absolute;\n    top: 0;\n    background: #fff;\n    width: 270px;\n    -webkit-box-shadow: 0px 6px 11px -5px #0000001a;\n            box-shadow: 0px 6px 11px -5px #0000001a;\n    border-left: 2px solid #bff51c;\n}\n.searche-resalts .searche-results__wrp ul {\n      list-style-type: none;\n      padding-left: 16px;\n      padding-top: 6px;\n}\n", ""]);
+exports.push([module.i, "\n.bounce-enter-active {\n  -webkit-transition: all .3s ease;\n  transition: all .3s ease;\n}\n.bounce-leave-active {\n  -webkit-transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);\n  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);\n}\n.bounce-enter, .bounce-leave-to {\n  -webkit-transform: translateY(10px);\n          transform: translateY(10px);\n  opacity: 0;\n}\n.backend {\n  position: relative;\n}\n.backend .rsearch-in {\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1;\n    -ms-flex-preferred-size: 80%;\n        flex-basis: 80%;\n}\n.backend .rsearch-in .rsearch__input {\n      width: 100%;\n      border-radius: 0 !important;\n      border: 1px solid #e9ecef !important;\n      background: #e9ecef;\n}\n.backend .rsearch-btn {\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1;\n}\n.backend .rsearch-btn .rsearch-btn__submit {\n      border-radius: 0 !important;\n      background: #4e73df !important;\n      width: 55px;\n      color: #ffffff !important;\n      border: 1px solid #4e73df !important;\n}\n.searche-resalts {\n  position: absolute;\n  bottom: 10px;\n  z-index: 9;\n}\n.searche-resalts .searche-results__wrp {\n    position: absolute;\n    top: 0;\n    background: #fff;\n    width: 270px;\n    -webkit-box-shadow: 0px 6px 11px -5px #0000001a;\n            box-shadow: 0px 6px 11px -5px #0000001a;\n    border-left: 2px solid #bff51c;\n}\n.searche-resalts .searche-results__wrp ul {\n      list-style-type: none;\n      padding-left: 16px;\n      padding-top: 6px;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 /* 48 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -52345,7 +52431,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(49)
+var listToStyles = __webpack_require__(50)
 
 /*
 type StyleObject = {
@@ -52554,7 +52640,7 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports) {
 
 /**
@@ -52587,12 +52673,12 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
 
 
@@ -52626,12 +52712,18 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
-        place: String
+        place: String,
+        action: {
+            default: '/search',
+            type: String
+        },
+        autocomplete: {
+            type: String,
+            default: '/autocomplete'
+        }
     },
     data: function data() {
         return {
@@ -52654,15 +52746,17 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                     while (1) {
                         switch (_context.prev = _context.next) {
                             case 0:
+                                console.log(this.autocomplete + '?q=' + this.value);
+
                                 if (!(this.value.length > 2)) {
-                                    _context.next = 8;
+                                    _context.next = 9;
                                     break;
                                 }
 
-                                _context.next = 3;
-                                return axios.get('/autocomplete?q=' + this.value);
+                                _context.next = 4;
+                                return axios.get(this.autocomplete + '?q=' + this.value);
 
-                            case 3:
+                            case 4:
                                 res = _context.sent;
 
                                 console.log(res);
@@ -52673,7 +52767,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                                         el.title = el.title.replace(new RegExp(_this.value, "ig"), '<b>' + _this.value + '</b>');
 
                                         nData.push(el);
-                                        // console.log(el)
+                                        console.log(el);
                                         // console.log(this.value)
                                     });
                                     console.log(nData);
@@ -52683,14 +52777,14 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                                     this.results = null;
                                     this.showRes = false;
                                 }
-                                _context.next = 10;
+                                _context.next = 11;
                                 break;
 
-                            case 8:
+                            case 9:
                                 this.results = null;
                                 this.showRes = false;
 
-                            case 10:
+                            case 11:
                             case 'end':
                                 return _context.stop();
                         }
@@ -52708,14 +52802,14 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 });
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(52);
+module.exports = __webpack_require__(53);
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -52740,7 +52834,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(53);
+module.exports = __webpack_require__(54);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -52756,7 +52850,7 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports) {
 
 /**
@@ -53489,7 +53583,7 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -53503,7 +53597,7 @@ var render = function() {
       class: _vm.place
     },
     [
-      _c("form", { attrs: { action: "/search" } }, [
+      _c("form", { attrs: { action: _vm.action } }, [
         _c("div", { staticClass: "rsearch__el rsearch-in" }, [
           _c("input", {
             directives: [
@@ -53594,93 +53688,62 @@ if (false) {
 }
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 56 */,
 /* 57 */
 /***/ (function(module, exports) {
 
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
+// removed by extract-text-webpack-plugin
 
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
+/***/ }),
+/* 58 */
+/***/ (function(module, exports) {
 
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
+// removed by extract-text-webpack-plugin
 
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
+/***/ }),
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */
+/***/ (function(module, exports) {
 
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
 
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
+// setTimeout(function(){
+//     document.querySelector('.info_admin').classList.add('hide');
+//
+// }, 2000);
 
-	return [content].join('\n');
-}
 
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+$(document).ready(function () {
 
-	return '/*# ' + data + ' */';
-}
+    if (document.querySelector('.info_admin')) {
+        setTimeout(function () {
+            document.querySelector('.info_admin').classList.add('hide');
+        }, 2000);
+    }
 
+    $('#slug__change').on('change', function () {
+        if ($('input#slug').attr('readonly') == 'readonly') $('input#slug').removeAttr('readonly');else $('input#slug').attr('readonly', 'readonly');
+    });
+});
 
 /***/ })
 /******/ ]);

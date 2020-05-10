@@ -2,23 +2,25 @@
 
 
 @section('content')
-    <div class="container">
+
         @component('admin.components.breadcrumb')
             @slot('title') Создание пользователя @endslot
-            @slot('parent') Главная @endslot
+            @slot('parents') Главная @endslot
             @slot('active') Пользователь @endslot
         @endcomponent
         <div class="row">
-            <form сlass="form-horizontal" action="{{route('user_managment.user.store')}}" method="post">
-                {{csrf_field()}}
-                {{-- Form include--}}
+            <div class="col-md-9">
+                <form сlass="form-horizontal" id="aform" action="{{route('user_managment.user.store')}}" method="post">
+                    {{csrf_field()}}
+                    {{-- Form include--}}
 
-                @include('user_managment.users.partials.form');
+                    @include('user_managment.users.partials.form')
 
 
-            </form>
+                </form>
+            </div>
         </div>
-    </div>
 
 
 @endsection
+

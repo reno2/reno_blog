@@ -5,12 +5,9 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
-//use Intervention\Image\Facades\Image;
 use Intervention\Image\Facades\Image;
-
-
 use Illuminate\Http\File;
-//use App\Upload;
+
 class ImageController extends Controller
 {
     /**
@@ -34,16 +31,13 @@ class ImageController extends Controller
 
 		    $filename = time().$request->file('image')->getClientOriginalName();
 
-				$tt = Storage::putFileAs( 'avatars', $request->file('image'), $filename);
+			//$tt = Storage::putFileAs( 'category', $request->file('image'), $filename);
 		   // $path = storage_path($tt);
 
-		    $path = 'public/images/' .  $filename;
-
-		    $request->file('image')->storeAs('public/img', $filename);
-		    $thumbnailpath = public_path('storage/img/'.$filename);
+		    $path = 'public/categories/' .  $filename;
 		    $image = Image::make($request->file('image'))->fit(300, 300);
+		    $bb =  Storage::put($path, (string) $image->encode());
 
-		  $bb =  Storage::put($path, (string) $image->encode());
 		    if($bb)
 				{
 						$url = Storage::url($path);
@@ -51,30 +45,6 @@ class ImageController extends Controller
 						    'image' => 	 $url
 				    ]);
 				}
-
-		    //$image->save(storage_path($thumbnailpath));
-
-//		    $img =  Image::make($thumbnailpath)
-//				    ->resize(150, 300);
-//		    $img->save(storage_path($thumbnailpath));
-
-				$hh ='';
-//		    $filename = time().$request->file('image')->getClientOriginalName();
-//		    $requestImage = request()->file('image');
-//
-//		    $uploadedFile = $request->file('image');
-//		    $filename = time().$uploadedFile->getClientOriginalName();
-//
-//		    $path = Storage::putFileAs(
-//				    'files', $request->file('image'), $filename
-//		    );
-//		    if($path)
-//				{
-//						$url = Storage::url($path);
-//				    return response()->json([
-//						    'image' => 	 $url
-//				    ]);
-//				}
     }
 
     /**

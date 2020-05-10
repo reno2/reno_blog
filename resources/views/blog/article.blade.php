@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
 @section('title')
-    {{$article->title}}
 
+    @if(MetaTag::tag('title'))
+        {!! MetaTag::tag('title') !!}
+    @endif
 @endsection
 
 @section('content')

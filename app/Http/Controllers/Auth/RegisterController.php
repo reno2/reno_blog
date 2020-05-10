@@ -25,7 +25,12 @@ class RegisterController extends Controller
 
 		public function showRegistrationForm()
 		{
-				return view('auth.register2');
+				//dd(\App\SBlog\Core\BlogApp::get_Instance()->getProperty('registration'));
+
+				if(\App\SBlog\Core\BlogApp::get_Instance()->getProperty('registration') == 'on')
+					return view('auth.register2');
+				else
+						return redirect()->route('front');
 		}
 
     /**

@@ -13,7 +13,8 @@
             @slot('active') редактирование @endslot
         @endcomponent
         <div class="row">
-            <form сlass="form-horizontal" action="{{route('admin.article.update', $article)}}" method="post">
+            <div class="col-md-9" id="aform">
+            <form сlass="form-horizontal" id="aform" action="{{route('admin.article.update', $article)}}" method="post">
                 <input type="hidden" name="_method" value="put">
                 {{csrf_field()}}
                 {{-- Form include--}}
@@ -22,6 +23,7 @@
                 <input type="hidden" name="modified_by" value="{{Auth::id()}}">
 
             </form>
+            </div>
         </div>
 
 
