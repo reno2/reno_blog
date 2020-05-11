@@ -1,0 +1,42 @@
+.dash{
+  .dash-item{
+    box-shadow:  0 15px 17px 0 rgba(58, 59, 69, 0.15) !important;
+    .dash-item__icon{
+      position: absolute;
+      top: 0;
+      right: 10%;
+      opacity: .2;
+      transition: all .2s;
+
+    }
+    p {
+      color: #fff;
+      span {
+        font-family: gilroy;
+        font-weight: 900;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+    }
+    &:hover .dash-item__icon{
+      transform: scale(1.2) translateX(20px);
+
+      transition: all .2s;
+    }
+  }
+  .dcat{
+    background: #2e495e;
+
+  }
+  .dpost {
+    background: #64b587;
+
+
+  }
+  .dusers{
+    background: #4e73df91;
+  }
+  .dtoday{
+    background: #6bd1d6;
+  }
+}

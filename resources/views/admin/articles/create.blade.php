@@ -17,14 +17,16 @@
             @slot('active') Материал @endslot
         @endcomponent
         <div class="row">
+            <div class="col-md-9" id="aform">
             <form сlass="form-horizontal" action="{{route('admin.article.store')}}" method="post">
                 {{csrf_field()}}
                 {{-- Form include--}}
 
-                @include('admin.articles.partials.form');
+                @include('admin.articles.partials.form')
                 <input type="hidden" name="created_by" value="{{Auth::id()}}">
 
             </form>
+            </div>
         </div>
 
 

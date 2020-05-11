@@ -183,8 +183,8 @@ return [
 				Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
 		    Intervention\Image\ImageServiceProvider::class,
-		    //Unisharp\Ckeditor\ServiceProvider::class,
-		    //JeroenNoten\LaravelCkEditor\ServiceProvider::class,
+
+
 
     ],
 
@@ -235,7 +235,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+
         'Image' => Intervention\Image\Facades\Image::class,
+				'MetaTag' => Fomvasss\LaravelMetaTags\Facade::class,
 
     ],
 

@@ -3,10 +3,10 @@
 
 @section('content')
 
-    <div class="container">
+
         @component('admin.components.breadcrumb')
             @slot('title') Список Пользователей @endslot
-            @slot('parent') Главная @endslot
+            @slot('parents') Главная @endslot
             @slot('active') Пользователи @endslot
         @endcomponent
 
@@ -16,6 +16,7 @@
             <thead>
             <th>Имя</th>
             <th>Email</th>
+            <th>Роли</th>
             <th class="text-right">Действия</th>
 
             </thead>
@@ -24,6 +25,7 @@
                 <tr>
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
+                    <td>{{$user->roles->first()['name']}}</td>
                     <td>
                         <form onsubmit="if(confirm('Удалить?')){return true} else {return false}" action="{{route('user_managment.user.destroy', $user)}}" method="post">
                             {{method_field("DELETE")}}
@@ -53,6 +55,6 @@
 
         </table>
 
-    </div>
+
 
 @endsection

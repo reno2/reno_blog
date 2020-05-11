@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Str;
-
+use Illuminate\Support\Facades\DB;
 
 class ArticleController extends Controller
 {
@@ -17,11 +17,23 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('admin.articles.index', [
-        		'articles' => Article::orderBy('created_at', 'desc')->paginate(10)
-        ]);
+
+    		//MetaTag\
+    		if($request->get('sort')){
+    				$sort = $request->get('sort');
+
+    				$articles = Article::orderBy('sort', $sort)->paginate(10);
+
+		    }
+    	  else{
+			      $articles = Article::orderBy('sort', 'desc')->orderBy('created_at', 'desc')->paginate(10);
+	      }
+        return view('admin.articles.index',
+
+        		 compact('articles')
+		        );
     }
 
     /**
@@ -149,4 +161,31 @@ class ArticleController extends Controller
 		    $article->delete();
 		    return redirect()->route('admin.article.index');
     }
+
+
+
+		public function search(Request $request){
+				$search =trim(strip_tags($request->get('q')));
+				$articles = Article::where('title', 'LIKE', '%'.$search.'%')
+						->paginate(10);
+
+				return view('admin.articles.index',
+
+						[
+								'articles' => $articles,
+								'title' => 'Результаты поиска'
+						]
+				);
+		}
+		public function autocomplete(Request $request){
+				$search =trim(strip_tags($request->get('q')));
+
+				//return response()->json($request->all());
+				$res = DB::table('articles')
+						->where('title', 'LIKE', '%'.$search.'%')
+						->get();
+				return response()->json($res);
+
+		}
+
 }

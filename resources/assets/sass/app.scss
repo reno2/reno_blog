@@ -33,10 +33,12 @@
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
-@import "node_modules/bootstrap/scss/bootstrap";
+
 @import "admin.top";
-*{
+@import "admin.dash";
+body{
   font-family: 'Merriweather', serif;
+  background: #f8f9fa;
 }
 
 .f-gilroy{
@@ -59,10 +61,14 @@ fw900{
 
 
 .admin{
-  .breadcrumb{
-    background: none;
-    .breadcrumb-item{
-      font-size: 10px;
+  .admin-apage {
+
+    .breadcrumb {
+      background: none;
+
+      .breadcrumb-item {
+        font-size: 10px;
+      }
     }
   }
 }
@@ -72,7 +78,7 @@ fw900{
       .dmenu__el{
         flex-grow: 0;
         &.del__links{
-          flex-grow: 1;
+
           justify-content: space-evenly;
           .nav-item {
             flex-grow: 1;
@@ -89,16 +95,8 @@ fw900{
         display: flex;
         align-items: center;
         .navbar__text{
-          display: none !important;
-          flex-direction: column;
-          margin-left: 9px;
-          display: flex;
-          font-size: 12px;
-          span{
-            line-height: 100%;
-            font-weight: 900;
-            color:#009aa8;
-          }
+
+
         }
 
       }
@@ -115,12 +113,7 @@ fw900{
           padding-bottom: 30px !important;
 
         }
-        &.active{
-          background: #009aa8;
-          a{
-            color:#fff;
-          }
-        }
+
       }
     }
   }
@@ -132,7 +125,7 @@ fw900{
     .rsearch__el{
       .rsearch__input{
         height: 40px;
-        border: 1px solid #fff;
+        border: 1px solid #eee;
         &:focus{
           outline: none;
         }
@@ -151,6 +144,7 @@ fw900{
         border-bottom-right-radius: 20px;
         background: #fff;
         width: 55px;
+        border-left:1px solid #fff;
         color: #009aa8a6;
       }
     }
@@ -181,50 +175,107 @@ fw900{
   }
 }
 .admin {
-  .apage {
-    .sidebar {
-      font-family: Gilroy;
-      height: 100%;
+  .admin-apage {
+    height: 100vh;
+    .apage {
       background: #4e73df;
-      //position: fixed;
+      flex-basis: 15%;
+      .sidebar {
+        font-family: Gilroy;
+        height: 100vh;
+        position: fixed;
+        //position: fixed;
 
-      .sidebar2__top {
-        color: rgba(255, 255, 255, .8);
-      }
-
-      .top__dashboard {
-        a {
+        .sidebar2__top {
           color: rgba(255, 255, 255, .8);
+        }
+
+        .top__front {
+          .to_front {
+            font-family: gilroy;
+            font-weight: 900;
+            color: #eee;
+            padding: 0.5rem 1rem;
+            display: block;
+          }
+
+          button {
+            display: none;
+          }
+        }
+
+        .top__dashboard {
+          a {
+            color: rgba(255, 255, 255, .8);
+          }
+        }
+
+        .top__middle {
+          .sidebar__ul {
+            padding-left: 0;
+            list-style-type: none;
+
+            .sidebar-heading {
+              padding-left: 15px;
+              font-family: Gilroy;
+              color: rgba(255, 255, 255, 0.4);
+              text-transform: uppercase;
+              font-weight: 600;
+              font-size: 11px;
+            }
+
+            .sul-link {
+              a {
+                color: rgba(255, 255, 255, .8);
+
+                &:hover, &:focus {
+                  background: #4f6abb;
+                }
+              }
+            }
+          }
         }
       }
 
-      .top__middle {
-        .sidebar__ul {
-          padding-left: 0;
-          list-style-type: none;
+      &.marea {
+        background-color: #f8f9fc;
+        width: 100%;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        .marea-footer{
+          background: #fff;
 
-          .sidebar-heading {
-            padding-left: 15px;
-            font-family: Gilroy;
-            color: rgba(255, 255, 255, 0.4);
-            text-transform: uppercase;
-            font-weight: 600;
-            font-size: 11px;
-          }
-
-          .sul-link {
-            a {
-              color: rgba(255, 255, 255, .8);
+        }
+        .marea__item{
+          flex-grow: 1;
+          position: relative;
+          .marea-footer__in{
+            display: flex;
+            .marea-footer__el{
+              flex-grow: 1;
             }
           }
         }
       }
     }
-    &.marea{
-
-        background-color: #f8f9fc;
-        width: 100%;
-        overflow-x: hidden;
-    }
   }
+}
+.afooter {
+
+  .afooter__title{
+    font-family: gilroy;
+  }
+  .afooter__ver {
+    text-align: right;
+    font-weight: 900;
+    font-family: gilroy;
+  }
+}
+
+//admin cdud
+#aform{
+  padding: 3rem;
+  background: #fff;
+
 }

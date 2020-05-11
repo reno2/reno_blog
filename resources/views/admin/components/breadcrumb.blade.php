@@ -1,4 +1,4 @@
-<h2 class="mt-5">
+<h2 class="mt-3">
 	{{$title}}
 </h2>
 

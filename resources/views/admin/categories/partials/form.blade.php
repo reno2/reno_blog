@@ -13,15 +13,26 @@
     </select>
 </div>
 
-<div class="form-group">
-    <label for="slug">Slug</label>
-    <input type="text" name="slug" class="form-control" id="slug" value="{{$category->slug or ''}}" readonly="">
-</div>
+<div class="slug d-flex align-items-center">
 
+
+    <div class="form-group slug__el" id="slug__toggle">
+
+        <input type="text" name="slug" class="form-control" id="slug" value="{{$category->slug ?? ''}}" readonly>
+    </div>
+    <div class="form-group slug__el form-check slug__checkbox ml-3">
+        <input type="checkbox" name="slug__change" class="form-check-input" id="slug__change">
+        <label class="form-check-label" for="exampleCheck1">Задать slug</label>
+    </div>
+
+
+
+
+</div>
 
 <div class="form-group">
     <label for="title">Название</label>
-    <input type="text" name="title" class="form-control" id="name" value="{{$category->title or ''}}">
+    <input type="text" name="title" class="form-control" id="name" value="{{$category->title ?? ''}}">
 </div>
 
 <div class="form-group">
@@ -29,7 +40,7 @@
     <select name="parent_id" class="form-control" id="categories">
         <option value="0">-- без родителей</option>
 
-        @include('admin.categories.partials.categories', ['categories' => $categories]);
+        @include('admin.categories.partials.categories', ['categories' => $categories])
 
 
 
