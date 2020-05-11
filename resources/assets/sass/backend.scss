@@ -21,3 +21,19 @@ $fa-font-path:        "../webfonts";
     right: -100%;
   }
 }
+
+
+
+.admin{
+  .marea{
+    .marea-top{
+      flex-grow: 0;
+    }
+    .marea-middle{
+      flex-grow: 1;
+    }
+    .marea__item{
+      flex-grow: 0;
+    }
+  }
+}
