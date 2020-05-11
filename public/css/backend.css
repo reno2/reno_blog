@@ -6068,3 +6068,21 @@ readers do not read off random characters that represent icons */
   right: -100%;
 }
 
+.admin .marea .marea-top {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+}
+
+.admin .marea .marea-middle {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.admin .marea .marea__item {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+}
+
