@@ -1,3 +1,101 @@
+@import '~highlight.js/scss/github';
+$fa-font-path:        "../webfonts";
+
+$gilroy:  'gilroy';
+
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
+//top bar
+.navbar{
+  background: #ffffff !important;
+  .navbar__logo{
+    border-right: 1px solid #eee;
+    flex-basis: 15%;
+    background: #fecf37;
+    padding-left: 10px;
+    .navbar-brand{
+      padding: 14px 0;
+      .navbar__text{
+        flex-direction: column;
+        margin-left: 9px;
+        display: flex;
+        font-size: 12px;
+        span{
+          line-height: 24px;
+          font-weight: 900;
+          color: #002b50;
+          font-size: 20px;
+          font-style: italic;
+          &.first{
+
+          }
+          &.second{
+
+
+          }
+        }
+      }
+    }
+  }
+  .navbar__menu{
+    flex-basis: 100%;
+    .dmenu{
+      justify-content: flex-end;
+      .del__links{
+        flex-basis: 41%;
+        li{
+          a{
+            color:#000;
+            font-weight: 900;
+          }
+          &.active{
+            background: #009aa8;
+            a{
+              color:#fff;
+            }
+          }
+        }
+
+      }
+      .del__search{
+        flex-basis: 24%;
+        position: relative;
+        padding: 23px 0;
+        border-left: 1px solid #eee;
+        form{
+
+          margin: 0 auto;
+        }
+      }
+      .del__user{
+        flex-basis: 12%;
+        background: #eee;
+        li{
+          width: 100%;
+          text-align: center;
+          a{
+            color: #737373;
+            font-family: gilroy;
+            padding: 33px 0;
+            display: block;
+            font-weight: 100;
+            font-size: 14px;
+            i{
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+      .dmenu__el{
+
+      }
+    }
+  }
+}
+
+
+
 .tags{
   .tags__item{
     font-family: gilroy;
@@ -6,5 +104,78 @@
     color: #fff;
     border-radius: 32px;
     font-size: 12px;
+  }
+}
+
+.breadcrumb{
+  padding: 0;
+  background: none;
+}
+
+.article{
+  pre code{
+    padding: 30px !important;
+
+    border-left: 2px solid #009aa8;
+  }
+  .article__inner {
+
+    .article__edit{
+      font-family: $gilroy;
+    }
+
+    background: #fff;
+    padding: 30px;
+    width: 100%;
+    border-radius: 6px;
+    .article__content {
+      width: 100%;
+      background: #fff;
+    }
+
+    .article__footer {
+      padding: 15px;
+      background: #fff;
+      display: flex;
+      width: 100%;
+
+      .a-footer__el {
+        flex-grow: 1;
+
+        &.tags {
+          justify-content: flex-end;
+
+          .tags__border {
+            height: 1px;
+            width: 100%;
+            display: block;
+            background: #f1e7e7;
+            margin: 16px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.marea-footer{
+  background: #fff;
+  .marea-footer__in{
+    font-family: $gilroy;
+    display: flex;
+    justify-content: space-between;
+    .afooter__left{
+      display: flex;
+      flex-direction: column;
+    }
+    .afooter__ver{
+      a{
+        color: #525361;
+        padding: 12px 47px;
+        img{
+          margin-right: 4px;
+        }
+      }
+    }
   }
 }

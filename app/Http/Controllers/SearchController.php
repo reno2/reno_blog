@@ -10,9 +10,13 @@ class SearchController extends Controller
 {
 		public function index(Request $request){
 				$search =trim(strip_tags($request->get('q')));
-				$res = Article::where('title', 'LIKE', '%'.$search.'%')
-						->get();
-
+				if($search)
+				{
+						$res = Article::where('title', 'LIKE', '%' . $search . '%')
+								->get();
+				}else{
+					$res = null;
+				}
 				return view('blog.search', compact('res', 'search'));
 		}
     public function search(Request $request){

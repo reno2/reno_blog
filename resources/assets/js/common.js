@@ -4,6 +4,8 @@
 //
 // }, 2000);
 
+import hljs from 'highlight.js';
+hljs.initHighlightingOnLoad();
 
 $(document).ready(()=>{
 

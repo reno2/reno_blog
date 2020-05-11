@@ -16,7 +16,7 @@
 				<div v-if="showRes==true" class="searche-results__wrp">
 					<ul>
 						<li v-for="item in this.results" :key="item.id">
-							<span v-html="item.title"></span>
+							<a :href="`/blog/article/${item.href}`"><span v-html="item.title"></span></a>
 						</li>
 					</ul>
 				</div>
@@ -51,20 +51,24 @@
         },
 		    methods:{
             async send(){
-               console.log(`${this.autocomplete}?q=${this.value}`)
+               //console.log(`${this.autocomplete}?q=${this.value}`)
 								if(this.value.length > 2) {
                     const res = await axios.get(`${this.autocomplete}?q=${this.value}`)
-										console.log(res)
+										//console.log(res)
                     if (res.data.length > 0) {
 												let nData = [];
                         res.data.forEach((el)=>{
-                           el.title = (el.title.replace(new RegExp(this.value, "ig"), `<b>${this.value}</b>`));
+                            let obj = {}
+                            obj.title = el.title.replace(new RegExp(this.value, "ig"), `<b>${this.value}</b>`)
+                            obj.href = el.slug
+		                        //el.title = el.title.replace(new RegExp(this.value, "ig"), `<b>${this.value}</b>`)
 
-                           nData.push(el)
-                             console.log(el)
-                            // console.log(this.value)
+
+                           nData.push(obj)
+                           //nData.push(el)
+
                         })
-                        console.log(nData)
+                        //console.log(nData)
                         this.results = nData
                         this.showRes = true
                     } else {
@@ -125,6 +129,8 @@
 		position: absolute;
 		bottom: 10px;
 		z-index: 9;
+		left: 25%;
+		bottom: -7%;
 		.searche-results__wrp{
 			position: absolute;
 			top: 0;
@@ -136,6 +142,9 @@
 				list-style-type:none;
 				padding-left: 16px;
 				padding-top: 6px;
+				a{
+					color: #333;
+				}
 			}
 		}
 	}

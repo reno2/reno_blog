@@ -20,9 +20,10 @@ class BlogController extends Controller
 
 		public function category($slug){
 
-				MetaTag::setTags(['title'=> $slug]);
+
 
 				$category = Category::where('slug', $slug)->first();
+				MetaTag::setTags(['title'=> $category->title]);
 				//dd($category->articles()->where('published', 0)->paginate(12));
 				return view('blog.category', [
 						'category' => $category,
@@ -33,6 +34,7 @@ class BlogController extends Controller
 		public function article($slug){
 
 				$article = Article::where('slug', $slug)->first();
+				MetaTag::setTags(['title'=> $article->title]);
 				//dd($category->articles()->where('published', 0)->paginate(12));
 				return view('blog.article', [
 						'article' => $article,
@@ -50,6 +52,7 @@ class BlogController extends Controller
 				//dd($category->articles()->where('published', 0)->paginate(12));
 				return view('blog.category', [
 						'articles' => $articles,
+						'tag' => $tag
 						//'articles' => $category->articles()->where('published', 1)->paginate(12)
 				]);
 		}

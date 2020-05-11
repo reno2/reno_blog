@@ -1,9 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-    {{$category->title ?? ''}}
+
     @if(MetaTag::tag('title'))
         {!! MetaTag::tag('title') !!}
+    @else
+        {{$category->title ?? ''}}
     @endif
 @endsection
 
@@ -13,7 +15,17 @@
     @component('chunks.page_title')
         @slot('title') {!! MetaTag::tag('title') !!}@endslot
     @endcomponent
-    @include('chunks.beadcrumbs')
+{{--    @include('chunks.beadcrumbs')--}}
+    <div class="container">
+        <div class="row">
+          @if(isset($tag))
+            {{ Breadcrumbs::render('tag', $tag) }}
+            @else
+                {{ Breadcrumbs::render('category', $category) }}
+            @endif
+        </div>
+    </div>
+
     <div class="container">
 
         <div class="row">

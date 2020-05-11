@@ -36,8 +36,9 @@
 
 @import "admin.top";
 @import "admin.dash";
-*{
+body{
   font-family: 'Merriweather', serif;
+  background: #f8f9fa;
 }
 
 .f-gilroy{
@@ -77,7 +78,7 @@ fw900{
       .dmenu__el{
         flex-grow: 0;
         &.del__links{
-          flex-grow: 1;
+
           justify-content: space-evenly;
           .nav-item {
             flex-grow: 1;
@@ -94,16 +95,8 @@ fw900{
         display: flex;
         align-items: center;
         .navbar__text{
-          display: none !important;
-          flex-direction: column;
-          margin-left: 9px;
-          display: flex;
-          font-size: 12px;
-          span{
-            line-height: 100%;
-            font-weight: 900;
-            color:#009aa8;
-          }
+
+
         }
 
       }
@@ -120,12 +113,7 @@ fw900{
           padding-bottom: 30px !important;
 
         }
-        &.active{
-          background: #009aa8;
-          a{
-            color:#fff;
-          }
-        }
+
       }
     }
   }
@@ -137,7 +125,7 @@ fw900{
     .rsearch__el{
       .rsearch__input{
         height: 40px;
-        border: 1px solid #fff;
+        border: 1px solid #eee;
         &:focus{
           outline: none;
         }
@@ -156,6 +144,7 @@ fw900{
         border-bottom-right-radius: 20px;
         background: #fff;
         width: 55px;
+        border-left:1px solid #fff;
         color: #009aa8a6;
       }
     }

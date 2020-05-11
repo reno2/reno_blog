@@ -4,6 +4,7 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
+        "davejamesmiller/laravel-breadcrumbs": "5.x",
         "fideloper/proxy": "~4.0",
         "fomvasss/laravel-meta-tags": "^3.2",
         "intervention/image": "^2.5",

@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col">
-			home
+			{{ Breadcrumbs::render('category', $category) }}
 		</div>
 	</div>
 </div>

@@ -25,7 +25,10 @@
         @include('layouts.header')
         @yield('page_title')
         @yield('content')
+
     </div>
+    @include('layouts.footer')
+
 
     <!-- Scripts -->
 

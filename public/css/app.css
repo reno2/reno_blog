@@ -12033,8 +12033,9 @@ a.text-dark:focus {
   background: #6bd1d6;
 }
 
-* {
+body {
   font-family: 'Merriweather', serif;
+  background: #f8f9fa;
 }
 
 .f-gilroy {
@@ -12071,9 +12072,6 @@ fw900 {
 }
 
 .front-end .navbar .dmenu__el.del__links {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -12100,25 +12098,6 @@ fw900 {
           align-items: center;
 }
 
-.front-end .navbar .navbar-brand .navbar__text {
-  display: none !important;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-left: 9px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 12px;
-}
-
-.front-end .navbar .navbar-brand .navbar__text span {
-  line-height: 100%;
-  font-weight: 900;
-  color: #009aa8;
-}
-
 .front-end .navbar {
   padding: 0;
 }
@@ -12126,14 +12105,6 @@ fw900 {
 .front-end .navbar .main-menu li a {
   padding-top: 30px !important;
   padding-bottom: 30px !important;
-}
-
-.front-end .navbar .main-menu li.active {
-  background: #009aa8;
-}
-
-.front-end .navbar .main-menu li.active a {
-  color: #fff;
 }
 
 .rsearch form {
@@ -12144,7 +12115,7 @@ fw900 {
 
 .rsearch form .rsearch__el .rsearch__input {
   height: 40px;
-  border: 1px solid #fff;
+  border: 1px solid #eee;
 }
 
 .rsearch form .rsearch__el .rsearch__input:focus {
@@ -12162,6 +12133,7 @@ fw900 {
   border-bottom-right-radius: 20px;
   background: #fff;
   width: 55px;
+  border-left: 1px solid #fff;
   color: #009aa8a6;
 }
 
