@@ -6150,6 +6150,34 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+html,
+body {
+  height: 100%;
+}
+
+#app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100%;
+}
+
+#app .app__content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+#app .app__footer {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
 .navbar {
   background: #ffffff !important;
 }
@@ -6261,8 +6289,20 @@ readers do not read off random characters that represent icons */
 }
 
 .breadcrumb {
-  padding: 0;
-  background: none;
+  background: #fecf37;
+  color: #333;
+  padding: 6px 20px;
+  border-radius: 24px;
+}
+
+.breadcrumb .breadcrumb-item a {
+  color: #000;
+  font-family: "gilroy";
+}
+
+.breadcrumb .breadcrumb-item.active {
+  color: #000;
+  font-family: "gilroy";
 }
 
 .article pre code {

@@ -6,6 +6,22 @@ $gilroy:  'gilroy';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '~@fortawesome/fontawesome-free/scss/solid.scss';
 @import '~@fortawesome/fontawesome-free/scss/regular.scss';
+
+html, body{
+  height: 100%;
+}
+#app{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  .app__content{
+flex: 1 0 auto;
+  }
+  .app__footer{
+    flex: 0 0 auto;
+  }
+}
+
 //top bar
 .navbar{
   background: #ffffff !important;
@@ -108,8 +124,21 @@ $gilroy:  'gilroy';
 }
 
 .breadcrumb{
-  padding: 0;
-  background: none;
+
+  background: #fecf37;
+  color: #333;
+  padding: 6px 20px;
+  border-radius: 24px;
+  .breadcrumb-item{
+    a{
+      color: #000;
+      font-family: $gilroy;
+    }
+    &.active{
+      color: #000;
+      font-family: $gilroy;
+    }
+  }
 }
 
 .article{
@@ -157,6 +186,8 @@ $gilroy:  'gilroy';
     }
   }
 }
+
+
 
 .marea-footer{
   background: #fff;
