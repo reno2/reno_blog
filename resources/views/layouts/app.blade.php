@@ -21,13 +21,16 @@
 </head>
 <body>
     <div id="app" class="front-end">
-
-        @include('layouts.header')
-        @yield('page_title')
-        @yield('content')
-
+        <div class="app__content">
+            @include('layouts.header')
+            @yield('page_title')
+            @yield('content')
+        </div>
+        <div class="app__footer">
+            @include('layouts.footer')
+        </div>
     </div>
-    @include('layouts.footer')
+    
 
 
     <!-- Scripts -->
