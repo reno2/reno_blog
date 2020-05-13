@@ -50,6 +50,7 @@
                             {{csrf_field()}}
                             <button type="submit" class="btn btn-default"><i class="fas fa-trash-alt"></i></button>
                             <a class="btn btn-default" href="{{route('admin.article.edit', $article)}}"><i class="fas fa-edit"></i></a>
+                            <a target="_blank" class="btn btn-default" href="{{route('article', $article->slug)}}"><i class="fas fa-share"></i></a>
                         </form>
 
                     </td>
