@@ -55,9 +55,13 @@
     setTimeout(function(){
         var konten = document.getElementById("description");
         CKEDITOR.replace(konten,{
-            language:'en-gb'
+            language:'en-gb',
+            extraPlugins: 'coder'
         });
         CKEDITOR.config.allowedContent = true;
+
+
+
     }, 400)
 </script>
 

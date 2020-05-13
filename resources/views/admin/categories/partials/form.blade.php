@@ -15,7 +15,6 @@
 
 <div class="slug d-flex align-items-center">
 
-
     <div class="form-group slug__el" id="slug__toggle">
 
         <input type="text" name="slug" class="form-control" id="slug" value="{{$category->slug ?? ''}}" readonly>
@@ -24,9 +23,6 @@
         <input type="checkbox" name="slug__change" class="form-check-input" id="slug__change">
         <label class="form-check-label" for="exampleCheck1">Задать slug</label>
     </div>
-
-
-
 
 </div>
 
