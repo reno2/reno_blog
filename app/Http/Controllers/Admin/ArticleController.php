@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
+use Mockery\Exception;
 
 class ArticleController extends Controller
 {
@@ -121,30 +123,42 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
+		    $this->validate($request, [
+				    'slug' => Rule::unique('articles')->ignore($article->id, 'id'),
+				    'title' => 'required'
+		    ]);
 
 		    $r = $request->all();
-
-
 		    $r['on_front'] = Input::has('on_front') ? true : false;
 
 		   //dd($r);
-    		$article->update($r);
+		    try
+		    {
+				    $update = $article->update($r);
 
 
+				    //Tags
+				    $article->tags()->detach();
+				    if ($request->input('tags')):
+						    $article->tags()->attach($request->input('tags'));
+				    endif;
 
-        //Tags
-		    $article->tags()->detach();
-		    if($request->input('tags')):
-				    $article->tags()->attach($request->input('tags'));
-		    endif;
 
+				    //Categories
+				    $article->categories()->detach();
+				    if ($request->input('categories')):
+						    $article->categories()->attach($request->input('categories'));
+				    endif;
 
-        //Categories
-		    $article->categories()->detach();
-		    if($request->input('categories')):
-				    $article->categories()->attach($request->input('categories'));
-		    endif;
-		    return redirect()->route('admin.article.index');
+				    session()->flash('message', "Категория  изменена " . $article->title);
+				    return redirect()->route('admin.article.index');
+
+		    }catch (Exception $exception){
+
+				    session()->flash('message', $exception->getMessage());
+				    return redirect()->route('admin.article.index');
+		    }
+
 
 
     }

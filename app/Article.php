@@ -8,10 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
 
+
 		// Mutators
-		public function setSlugAttribute($value){
-				$this->attributes['slug'] = Str::slug(mb_substr($this->title, 0, 40) . '-' . Carbon::now()->format('dmyHi'), '-');
+		public function setSlugAttribute($value)
+		{
+
+				if(isset($_REQUEST['slug__change']) && !empty($value)){
+						$this->attributes['slug'] = Str::slug($value);
+				}else{
+						$this->attributes['slug'] = Str::slug($_REQUEST['title']);
+				}
 		}
+
 
 		protected $fillable = ['title', 'slug', 'sort', 'description_short', 'description','image','image_show', 'meta_title', 'meta_description', 'viewed' ,'published', 'created_by', 'modifierd_by', 'on_front'];
 		//plymorphe

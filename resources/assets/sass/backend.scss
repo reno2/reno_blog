@@ -37,3 +37,14 @@ $fa-font-path:        "../webfonts";
     }
   }
 }
+
+//admin cdud
+#aform{
+  padding: 3rem;
+  background: #fff;
+  .slug{
+    .slug__el{
+      flex-basis: 50%;
+    }
+  }
+}
