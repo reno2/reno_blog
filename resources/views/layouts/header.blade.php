@@ -7,7 +7,7 @@
     <div class="container-fluid front-end">
          <div class="navbar__el navbar__logo">
             <a class="navbar-brand" href="{{route('front')}}">
-                <img src="{{ asset('images/wb.png')}}" height="60">
+                <img src="{{ asset('images/llogo2.png')}}" height="60">
                 <span class="navbar__text logo-text">
                     <span class="logo-text__first">lamantra</span>
                     <span class="logo-text__second">bloging</span>
@@ -29,7 +29,7 @@
             <ul class="dmenu__el del__user nav navbar-nav navbar-right justify-content-around">
                 <!-- Authentication Links -->
                 @guest
-                    <li class="mx-2"><a href="http://web-landing.ru/"><i class="fas fa-paper-plane"></i> заказать сайт</a></li>
+                    <li class="mx-2"><a href="http://web-landing.ru/"> заказать<br> разработку</a></li>
 {{--                    <li class="mx-2"><a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a></li>--}}
                     @if(\App\SBlog\Core\BlogApp::get_Instance()->getProperty('registration') == 'on')
                       <li class="mx-2"><a href="{{ route('register') }}">Register</a></li>

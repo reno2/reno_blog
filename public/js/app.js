@@ -39893,6 +39893,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // }, 2000);
 
 
+
+__WEBPACK_IMPORTED_MODULE_0_highlight_js___default.a.configure({ tabReplace: '<span class="indent">\t</span>' });
 __WEBPACK_IMPORTED_MODULE_0_highlight_js___default.a.initHighlightingOnLoad();
 
 $(document).ready(function () {
