@@ -64,7 +64,7 @@
 
 <div class="form-group">
 <label for="">Описание</label>
-<textarea name="description" class="form-control" id="description">{!! $article->description ?? ''!!}</textarea>
+<textarea name="description" class="form-control" id="description">{{ $article->description ?? '' }}</textarea>
 </div>
 
 <div class="form-group">
@@ -90,6 +90,11 @@
 </div>
 
 
+<div class="form-check form-reload">
 
+    <input  type="checkbox" value="" name="reload" class="form-check-input" id="reload">
+    <label class="form-check-label" for="reload">Не возвращатся к списку</label>
+</div>
 <hr>
-<input type="submit" class="btn btn-block btn-primary" value="Добавить категорию">
+<input type="submit" class="btn btn-block btn-primary" value="Сохранить">
+

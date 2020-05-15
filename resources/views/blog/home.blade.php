@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('layouts.hero')
+    @include('layouts.front-info')
+
     <div class="container">
         <div class="row">
             @php

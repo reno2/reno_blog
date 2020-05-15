@@ -1,6 +1,31 @@
 @import '~highlight.js/scss/github';
 $fa-font-path:        "../webfonts";
 
+@mixin desc() {
+  @media(max-width: 1200px) {
+    @content
+  }
+}
+
+@mixin lap() {
+  @media(max-width: 992px) {
+    @content
+  }
+}
+
+@mixin tab(){
+  @media(max-width: 768px){
+    @content
+  }
+}
+
+@mixin phone() {
+  @media(max-width: 480px) {
+    @content
+  }
+}
+
+
 $gilroy:  'gilroy';
 
 @import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
@@ -21,6 +46,157 @@ flex: 1 0 auto;
     flex: 0 0 auto;
   }
 }
+
+//hero
+.hero{
+  .hero__wrapp{
+    display: flex;
+    justify-content: space-around;
+    background: url(/images/front/bgy2.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    height: 850px;
+    align-items: center;
+    @include lap{
+      justify-content: center;
+    }
+    .hero__item{
+      flex-grow: 1;
+    }
+  }
+}
+.hero-text{
+
+    transform: translateY(-50%);
+
+  @include desc{
+    width: 40%;
+  }
+  //transform: translateY(-20%);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  .hero-text__deved{
+
+    flex-shrink: 1;
+    width: 8px ;
+    height: 210px;
+    margin: 0px 20px;
+    .hero-text__bb {
+      height: 100%;
+      width: 2px;
+
+      background: #fff;
+    }
+  }
+  .hero-text__el{
+
+    flex-shrink: 0;
+    .hero-text__top{
+      font-weight: 900;
+      font-family: gilroy;
+      left: 0;
+      position: absolute;
+      transform: translate(-38%, -50%);
+      color: #212529;
+      text-transform: uppercase;
+    }
+    .hero-text__midd{
+
+    }
+    .hero-text__bott{
+
+    }
+
+    .hero-text__first{
+      font-size: 70px;
+      @include desc{
+        font-size: 50px;}
+    }
+    .hero-text__second{
+      font-size: 50px;}
+    .hero-text__therd{
+      @include desc{
+        font-size: 50px;
+      }
+      font-size: 90px;}
+    .hero-text__four{
+      font-size: 90px;
+      line-height: 10px !important;
+      color: #fff;
+    }
+
+    .hero-text_bold{
+      font-family: $gilroy;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 100%;
+      font-size: 90px;
+      @include desc{
+        font-size: 70px ;
+      }
+    }
+    .hero-text_white{
+      color: #fff;
+      line-height: 100%;
+      font-weight: 400;
+      font-family: $gilroy;
+    }
+    position: relative;
+
+  }
+}
+.hero-img{
+  transform: translateY(-16%);
+  @include lap{
+   display: none;
+  }
+  @include desc{
+    flex-basis: 40%;
+  }
+  img{
+    margin: 0 auto;
+    display: block;
+    flex-basis: 50%;
+  }
+}
+//end hero
+.info{
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  transform: translateY(-39%);
+  .info__item{
+    flex-basis: 36%;
+    background: #3e3b56;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 18px 14px -6px #0000005e;
+    margin-right: 45px;
+    margin-bottom: 45px;
+  }
+}
+.s-block{
+  .s-block__icon{
+    img {
+      width: 80px;
+    }
+  }
+  .s-block__title{
+    margin: 20px 0 15px;
+    font-family: $gilroy;
+    font-weight: 900;
+    font-size: 24px;
+    color: #f37b83;
+  }
+  .s-block__text{
+    color: #fff;
+    font-family: $gilroy;
+  }
+}
+//start info
+
+//end info
 
 //top bar
 .navbar{
@@ -86,17 +262,20 @@ flex: 1 0 auto;
       }
       .del__user{
         flex-basis: 12%;
-        background: #eee;
+        background: #2f2e41;
         li{
           width: 100%;
           text-align: center;
           a{
-            color: #737373;
+            color: #fff;
             font-family: gilroy;
-            padding: 33px 0;
+            padding: 22px 0;
             display: block;
-            font-weight: 100;
-            font-size: 14px;
+            font-weight: 900;
+            font-size: 19px;
+            line-height: 120%;
+            text-transform: uppercase;
+
             i{
               margin-right: 5px;
             }
@@ -144,8 +323,11 @@ flex: 1 0 auto;
 .article{
   pre code{
     padding: 30px !important;
-
     border-left: 2px solid #009aa8;
+    .indent{
+      display: inline-block;
+      width: 20px;
+    }
   }
   .article__inner {
 

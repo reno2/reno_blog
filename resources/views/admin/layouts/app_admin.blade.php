@@ -59,7 +59,8 @@
             extraPlugins: 'coder'
         });
         CKEDITOR.config.allowedContent = true;
-
+        CKEDITOR.config.entities = true;
+        //CKEDITOR.config.htmlEncodeOutput = false;
 
 
     }, 400)
