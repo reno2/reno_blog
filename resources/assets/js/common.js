@@ -5,6 +5,9 @@
 // }, 2000);
 
 import hljs from 'highlight.js';
+
+
+hljs.configure({tabReplace: '<span class="indent">\t</span>'});
 hljs.initHighlightingOnLoad();
 
 $(document).ready(()=>{

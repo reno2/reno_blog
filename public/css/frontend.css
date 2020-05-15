@@ -6178,6 +6178,204 @@ body {
           flex: 0 0 auto;
 }
 
+.hero .hero__wrapp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background: url(/images/front/bgy2.png);
+  background-size: auto;
+  background-repeat: no-repeat;
+  height: 850px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 992px) {
+  .hero .hero__wrapp {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.hero .hero__wrapp .hero__item {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.hero-text {
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+@media (max-width: 1200px) {
+  .hero-text {
+    width: 40%;
+  }
+}
+
+.hero-text .hero-text__deved {
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  width: 8px;
+  height: 210px;
+  margin: 0px 20px;
+}
+
+.hero-text .hero-text__deved .hero-text__bb {
+  height: 100%;
+  width: 2px;
+  background: #fff;
+}
+
+.hero-text .hero-text__el {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  position: relative;
+}
+
+.hero-text .hero-text__el .hero-text__top {
+  font-weight: 900;
+  font-family: gilroy;
+  left: 0;
+  position: absolute;
+  -webkit-transform: translate(-38%, -50%);
+          transform: translate(-38%, -50%);
+  color: #212529;
+  text-transform: uppercase;
+}
+
+.hero-text .hero-text__el .hero-text__first {
+  font-size: 70px;
+}
+
+@media (max-width: 1200px) {
+  .hero-text .hero-text__el .hero-text__first {
+    font-size: 50px;
+  }
+}
+
+.hero-text .hero-text__el .hero-text__second {
+  font-size: 50px;
+}
+
+.hero-text .hero-text__el .hero-text__therd {
+  font-size: 90px;
+}
+
+@media (max-width: 1200px) {
+  .hero-text .hero-text__el .hero-text__therd {
+    font-size: 50px;
+  }
+}
+
+.hero-text .hero-text__el .hero-text__four {
+  font-size: 90px;
+  line-height: 10px !important;
+  color: #fff;
+}
+
+.hero-text .hero-text__el .hero-text_bold {
+  font-family: "gilroy";
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 100%;
+  font-size: 90px;
+}
+
+@media (max-width: 1200px) {
+  .hero-text .hero-text__el .hero-text_bold {
+    font-size: 70px;
+  }
+}
+
+.hero-text .hero-text__el .hero-text_white {
+  color: #fff;
+  line-height: 100%;
+  font-weight: 400;
+  font-family: "gilroy";
+}
+
+.hero-img {
+  -webkit-transform: translateY(-16%);
+          transform: translateY(-16%);
+}
+
+@media (max-width: 992px) {
+  .hero-img {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .hero-img {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+  }
+}
+
+.hero-img img {
+  margin: 0 auto;
+  display: block;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+.info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-transform: translateY(-39%);
+          transform: translateY(-39%);
+}
+
+.info .info__item {
+  -ms-flex-preferred-size: 36%;
+      flex-basis: 36%;
+  background: #3e3b56;
+  padding: 30px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 18px 14px -6px #0000005e;
+          box-shadow: 0px 18px 14px -6px #0000005e;
+  margin-right: 45px;
+  margin-bottom: 45px;
+}
+
+.s-block .s-block__icon img {
+  width: 80px;
+}
+
+.s-block .s-block__title {
+  margin: 20px 0 15px;
+  font-family: "gilroy";
+  font-weight: 900;
+  font-size: 24px;
+  color: #f37b83;
+}
+
+.s-block .s-block__text {
+  color: #fff;
+  font-family: "gilroy";
+}
+
 .navbar {
   background: #ffffff !important;
 }
@@ -6258,7 +6456,7 @@ body {
 .navbar .navbar__menu .dmenu .del__user {
   -ms-flex-preferred-size: 12%;
       flex-basis: 12%;
-  background: #eee;
+  background: #2f2e41;
 }
 
 .navbar .navbar__menu .dmenu .del__user li {
@@ -6267,12 +6465,14 @@ body {
 }
 
 .navbar .navbar__menu .dmenu .del__user li a {
-  color: #737373;
+  color: #fff;
   font-family: gilroy;
-  padding: 33px 0;
+  padding: 22px 0;
   display: block;
-  font-weight: 100;
-  font-size: 14px;
+  font-weight: 900;
+  font-size: 19px;
+  line-height: 120%;
+  text-transform: uppercase;
 }
 
 .navbar .navbar__menu .dmenu .del__user li a i {
@@ -6308,6 +6508,11 @@ body {
 .article pre code {
   padding: 30px !important;
   border-left: 2px solid #009aa8;
+}
+
+.article pre code .indent {
+  display: inline-block;
+  width: 20px;
 }
 
 .article .article__inner {

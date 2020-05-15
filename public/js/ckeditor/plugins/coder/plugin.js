@@ -3,7 +3,6 @@ CKEDITOR.plugins.add( 'coder', {
     init: function( editor ) {
         editor.addCommand( 'insertCoder', {
             exec: function( insertCoder ) {
-                var now = new Date();
                 editor.insertHtml( '<code class="inner">' + editor.getSelection().getSelectedText() + '</code>' );
             }
         });

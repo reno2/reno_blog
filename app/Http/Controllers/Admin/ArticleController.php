@@ -151,7 +151,24 @@ class ArticleController extends Controller
 				    endif;
 
 				    session()->flash('message', "Категория  изменена " . $article->title);
-				    return redirect()->route('admin.article.index');
+				    if(in_array('reload', $r, true))
+				    {
+						    $tags  = \App\Tag::all();
+						    $tags2 = [];
+						    foreach ($tags as $tag)
+						    {
+								    $tags2[$tag->id] = $tag->name;
+						    }
+
+						    return view('admin.articles.edit', [
+								    'article'    => $article,
+								    'categories' => Category::with('children')->where('parent_id', 0)->get(),
+								    'tags'       => $tags,
+								    'delimiter'  => ''
+						    ]);
+				    }
+				    else
+				        return redirect()->route('admin.article.index');
 
 		    }catch (Exception $exception){
 
