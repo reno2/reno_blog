@@ -1,0 +1,142 @@
+//hero
+.hero{
+  .hero__wrapp{
+    display: flex;
+    justify-content: space-around;
+    background: url(/images/front/bgy2.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    height: 850px;
+    align-items: center;
+    @include lap{
+      justify-content: center;
+    }
+    .hero__item{
+      flex-grow: 1;
+    }
+  }
+}
+.hero-text{
+
+  //transform: translateY(-50%);
+
+  position: absolute;
+  transform: translate(-500px, -50%);
+  top: 50%;
+  opacity: 0;
+  @include desc{
+    width: 40%;
+  }
+  //transform: translateY(-20%);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  .hero-text__deved{
+    transform: translate(-100px, 72%) rotate(46deg);
+    opacity: 0;
+    flex-shrink: 1;
+    width: 8px ;
+    height: 210px;
+    margin: 0px 20px;
+    .hero-text__bb {
+      height: 100%;
+      width: 2px;
+
+      background: #fff;
+    }
+  }
+  .hero-text__el{
+
+    flex-shrink: 0;
+    .hero-text__top{
+      font-weight: 100;
+      font-family: gilroy;
+      left: 0;
+      position: absolute;
+      transform: translate(-38%, -50%) rotateX(90deg);
+
+
+      color: #ffffff;
+      text-transform: uppercase;
+
+    }
+    .hero-text__midd{
+
+    }
+    .hero-text__bott{
+
+    }
+
+    .hero-text__first{
+
+      font-size: 70px;
+      transform: translateX(100%);
+      opacity: 0;
+
+      @include desc{
+        font-size: 50px;}
+    }
+    .hero-text__second{
+
+      transform: translateX(100%);
+      opacity: 0;
+
+      font-size: 50px;}
+    .hero-text__therd{
+
+      transform: translateX(100%);
+      opacity: 0;
+
+      @include desc{
+        font-size: 50px;
+      }
+      font-size: 90px;}
+    .hero-text__four{
+
+      transform: translateX(100%);
+      opacity: 0;
+
+      font-size: 90px;
+      line-height: 10px !important;
+      color: #fff;
+    }
+
+    .hero-text_bold{
+      font-family: $gilroy;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 100%;
+      font-size: 90px;
+      color: #3e3b56;
+      @include desc{
+        font-size: 70px ;
+      }
+    }
+    .hero-text_white{
+      color: #fff;
+      line-height: 100%;
+      font-weight: 400;
+      font-family: $gilroy;
+    }
+    position: relative;
+
+  }
+}
+.hero-img{
+  transform: translateY(-16%);
+  @include lap{
+    display: none;
+  }
+  @include desc{
+    flex-basis: 40%;
+  }
+  img{
+    margin: 0 auto;
+    display: block;
+    flex-basis: 50%;
+  }
+}
+
+
+
+//end hero

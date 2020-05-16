@@ -1,0 +1,79 @@
+
+
+.info{
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  transform: translateY(-39%);
+  .info__item{
+    flex-basis: 36%;
+    background: #3e3b56;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 18px 14px -6px #0000005e;
+    margin-right: 45px;
+    margin-bottom: 45px;
+  }
+}
+.s-block{
+  position: relative;
+  transition: 500ms all;
+  &:hover{
+    transform: translateY(-30px);
+    transition: 500ms all;
+  }
+  .s-block__icon{
+    img {
+      width: 80px;
+    }
+  }
+  .s-block__title{
+    margin: 20px 0 15px;
+    font-family: $gilroy;
+    font-weight: 900;
+    font-size: 24px;
+    color: #ffd017;
+  }
+  .s-block__text{
+    color: #fff;
+    font-family: $gilroy;
+  }
+}
+.s-block__lime_bottomr{
+  position: relative;
+  &:after {
+    position: absolute;
+    content: "";
+    background: url('/images/lime.png');
+    z-index: 0;
+  }
+}
+.s-block__lime_topl{
+
+  position: relative;
+  &:after {
+    -webkit-animation: rotation 8000ms infinite linear;
+    position: absolute;
+    content: "";
+    background: url(/images/lime.png);
+    z-index: -1;
+    transform: translateX(-25%);
+    width: 250px;
+    height: 250px;
+    margin-left: -125px;
+    top:0%;
+  }
+}
+
+
+
+
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}

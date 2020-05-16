@@ -6150,34 +6150,6 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
-html,
-body {
-  height: 100%;
-}
-
-#app {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  min-height: 100%;
-}
-
-#app .app__content {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
-}
-
-#app .app__footer {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-}
-
 .hero .hero__wrapp {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6208,8 +6180,11 @@ body {
 }
 
 .hero-text {
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  position: absolute;
+  -webkit-transform: translate(-500px, -50%);
+          transform: translate(-500px, -50%);
+  top: 50%;
+  opacity: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6228,6 +6203,9 @@ body {
 }
 
 .hero-text .hero-text__deved {
+  -webkit-transform: translate(-100px, 72%) rotate(46deg);
+          transform: translate(-100px, 72%) rotate(46deg);
+  opacity: 0;
   -ms-flex-negative: 1;
       flex-shrink: 1;
   width: 8px;
@@ -6248,18 +6226,21 @@ body {
 }
 
 .hero-text .hero-text__el .hero-text__top {
-  font-weight: 900;
+  font-weight: 100;
   font-family: gilroy;
   left: 0;
   position: absolute;
-  -webkit-transform: translate(-38%, -50%);
-          transform: translate(-38%, -50%);
-  color: #212529;
+  -webkit-transform: translate(-38%, -50%) rotateX(90deg);
+          transform: translate(-38%, -50%) rotateX(90deg);
+  color: #ffffff;
   text-transform: uppercase;
 }
 
 .hero-text .hero-text__el .hero-text__first {
   font-size: 70px;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 0;
 }
 
 @media (max-width: 1200px) {
@@ -6269,10 +6250,16 @@ body {
 }
 
 .hero-text .hero-text__el .hero-text__second {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 0;
   font-size: 50px;
 }
 
 .hero-text .hero-text__el .hero-text__therd {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 0;
   font-size: 90px;
 }
 
@@ -6283,6 +6270,9 @@ body {
 }
 
 .hero-text .hero-text__el .hero-text__four {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 0;
   font-size: 90px;
   line-height: 10px !important;
   color: #fff;
@@ -6382,7 +6372,7 @@ body {
   font-family: "gilroy";
   font-weight: 900;
   font-size: 24px;
-  color: #f37b83;
+  color: #ffd017;
 }
 
 .s-block .s-block__text {
@@ -6406,6 +6396,7 @@ body {
 }
 
 .s-block__lime_topl:after {
+  -webkit-animation: rotation 8000ms infinite linear;
   position: absolute;
   content: "";
   background: url(/images/lime.png);
@@ -6416,6 +6407,16 @@ body {
   height: 250px;
   margin-left: -125px;
   top: 0%;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
 }
 
 .navbar {
@@ -6432,7 +6433,7 @@ body {
 }
 
 .navbar .navbar__logo .navbar-brand {
-  padding: 14px 0;
+  padding: 12px 0;
 }
 
 .navbar .navbar__logo .navbar-brand .navbar__text {
@@ -6477,7 +6478,7 @@ body {
 }
 
 .navbar .navbar__menu .dmenu .del__links li.active {
-  background: #009aa8;
+  background: #f3c71b;
 }
 
 .navbar .navbar__menu .dmenu .del__links li.active a {
@@ -6488,7 +6489,7 @@ body {
   -ms-flex-preferred-size: 24%;
       flex-basis: 24%;
   position: relative;
-  padding: 23px 0;
+  padding: 20px 0;
   border-left: 1px solid #eee;
 }
 
@@ -6510,7 +6511,7 @@ body {
 .navbar .navbar__menu .dmenu .del__user li a {
   color: #fff;
   font-family: gilroy;
-  padding: 22px 0;
+  padding: 20px 0;
   display: block;
   font-weight: 900;
   font-size: 19px;
@@ -6520,6 +6521,34 @@ body {
 
 .navbar .navbar__menu .dmenu .del__user li a i {
   margin-right: 5px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100%;
+}
+
+#app .app__content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+#app .app__footer {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 .tags .tags__item {
