@@ -39880,6 +39880,7 @@ module.exports = function spread(callback) {
 
 /***/ }),
 /* 38 */
+<<<<<<< HEAD
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -59754,8 +59755,20 @@ function crmsh(hljs) {
 }
 
 module.exports = crmsh;
+=======
+/***/ (function(module, exports) {
 
 
+// setTimeout(function(){
+//     document.querySelector('.info_admin').classList.add('hide');
+//
+// }, 2000);
+
+>>>>>>> tmp
+
+$(document).ready(function () {
+
+<<<<<<< HEAD
 /***/ }),
 /* 101 */
 /***/ (function(module, exports) {
@@ -60177,6 +60190,258 @@ module.exports = csharp;
 /***/ }),
 /* 103 */
 /***/ (function(module, exports) {
+=======
+    //document.querySelector('.abrand').addEventListener('click', hero1);
+
+
+    if (document.querySelector('.info_admin')) {
+        setTimeout(function () {
+            document.querySelector('.info_admin').classList.add('hide');
+        }, 2000);
+    }
+
+    $('#slug__change').on('change', function () {
+        if ($('input#slug').attr('readonly') == 'readonly') $('input#slug').removeAttr('readonly');else $('input#slug').attr('readonly', 'readonly');
+    });
+});
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+if (false) {
+  module.exports = require('./vue.common.prod.js')
+} else {
+  module.exports = __webpack_require__(40)
+}
+
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
+ * Vue.js v2.6.11
+ * (c) 2014-2019 Evan You
+ * Released under the MIT License.
+ */
+
+
+/*  */
+
+var emptyObject = Object.freeze({});
+
+// These helpers produce better VM code in JS engines due to their
+// explicitness and function inlining.
+function isUndef (v) {
+  return v === undefined || v === null
+}
+
+function isDef (v) {
+  return v !== undefined && v !== null
+}
+
+function isTrue (v) {
+  return v === true
+}
+
+function isFalse (v) {
+  return v === false
+}
+
+/**
+ * Check if value is primitive.
+ */
+function isPrimitive (value) {
+  return (
+    typeof value === 'string' ||
+    typeof value === 'number' ||
+    // $flow-disable-line
+    typeof value === 'symbol' ||
+    typeof value === 'boolean'
+  )
+}
+
+/**
+ * Quick object check - this is primarily used to tell
+ * Objects from primitive values when we know the value
+ * is a JSON-compliant type.
+ */
+function isObject (obj) {
+  return obj !== null && typeof obj === 'object'
+}
+
+/**
+ * Get the raw type string of a value, e.g., [object Object].
+ */
+var _toString = Object.prototype.toString;
+
+function toRawType (value) {
+  return _toString.call(value).slice(8, -1)
+}
+
+/**
+ * Strict object type check. Only returns true
+ * for plain JavaScript objects.
+ */
+function isPlainObject (obj) {
+  return _toString.call(obj) === '[object Object]'
+}
+
+function isRegExp (v) {
+  return _toString.call(v) === '[object RegExp]'
+}
+
+/**
+ * Check if val is a valid array index.
+ */
+function isValidArrayIndex (val) {
+  var n = parseFloat(String(val));
+  return n >= 0 && Math.floor(n) === n && isFinite(val)
+}
+
+function isPromise (val) {
+  return (
+    isDef(val) &&
+    typeof val.then === 'function' &&
+    typeof val.catch === 'function'
+  )
+}
+
+/**
+ * Convert a value to a string that is actually rendered.
+ */
+function toString (val) {
+  return val == null
+    ? ''
+    : Array.isArray(val) || (isPlainObject(val) && val.toString === _toString)
+      ? JSON.stringify(val, null, 2)
+      : String(val)
+}
+
+/**
+ * Convert an input value to a number for persistence.
+ * If the conversion fails, return original string.
+ */
+function toNumber (val) {
+  var n = parseFloat(val);
+  return isNaN(n) ? val : n
+}
+
+/**
+ * Make a map and return a function for checking if a key
+ * is in that map.
+ */
+function makeMap (
+  str,
+  expectsLowerCase
+) {
+  var map = Object.create(null);
+  var list = str.split(',');
+  for (var i = 0; i < list.length; i++) {
+    map[list[i]] = true;
+  }
+  return expectsLowerCase
+    ? function (val) { return map[val.toLowerCase()]; }
+    : function (val) { return map[val]; }
+}
+
+/**
+ * Check if a tag is a built-in tag.
+ */
+var isBuiltInTag = makeMap('slot,component', true);
+
+/**
+ * Check if an attribute is a reserved attribute.
+ */
+var isReservedAttribute = makeMap('key,ref,slot,slot-scope,is');
+
+/**
+ * Remove an item from an array.
+ */
+function remove (arr, item) {
+  if (arr.length) {
+    var index = arr.indexOf(item);
+    if (index > -1) {
+      return arr.splice(index, 1)
+    }
+  }
+}
+
+/**
+ * Check whether an object has the property.
+ */
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+function hasOwn (obj, key) {
+  return hasOwnProperty.call(obj, key)
+}
+
+/**
+ * Create a cached version of a pure function.
+ */
+function cached (fn) {
+  var cache = Object.create(null);
+  return (function cachedFn (str) {
+    var hit = cache[str];
+    return hit || (cache[str] = fn(str))
+  })
+}
+
+/**
+ * Camelize a hyphen-delimited string.
+ */
+var camelizeRE = /-(\w)/g;
+var camelize = cached(function (str) {
+  return str.replace(camelizeRE, function (_, c) { return c ? c.toUpperCase() : ''; })
+});
+
+/**
+ * Capitalize a string.
+ */
+var capitalize = cached(function (str) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+});
+
+/**
+ * Hyphenate a camelCase string.
+ */
+var hyphenateRE = /\B([A-Z])/g;
+var hyphenate = cached(function (str) {
+  return str.replace(hyphenateRE, '-$1').toLowerCase()
+});
+
+/**
+ * Simple bind polyfill for environments that do not support it,
+ * e.g., PhantomJS 1.x. Technically, we don't need this anymore
+ * since native bind is now performant enough in most browsers.
+ * But removing it would mean breaking code that was able to run in
+ * PhantomJS 1.x, so this must be kept for backward compatibility.
+ */
+
+/* istanbul ignore next */
+function polyfillBind (fn, ctx) {
+  function boundFn (a) {
+    var l = arguments.length;
+    return l
+      ? l > 1
+        ? fn.apply(ctx, arguments)
+        : fn.call(ctx, a)
+      : fn.call(ctx)
+  }
+
+  boundFn._length = fn.length;
+  return boundFn
+}
+
+function nativeBind (fn, ctx) {
+  return fn.bind(ctx)
+}
+
+var bind = Function.prototype.bind
+  ? nativeBind
+  : polyfillBind;
+>>>>>>> tmp
 
 /*
 Language: CSP
@@ -77340,10 +77605,25 @@ function shell(hljs) {
 
 module.exports = shell;
 
+<<<<<<< HEAD
 
 /***/ }),
 /* 223 */
 /***/ (function(module, exports) {
+=======
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(41).setImmediate))
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
+            (typeof self !== "undefined" && self) ||
+            window;
+var apply = Function.prototype.apply;
+
+// DOM APIs, for completeness
+>>>>>>> tmp
 
 /*
 Language: Smali
@@ -77409,12 +77689,38 @@ function smali(hljs) {
   };
 }
 
+<<<<<<< HEAD
 module.exports = smali;
+=======
+// setimmediate attaches itself to the global object
+__webpack_require__(42);
+// On some exotic environments, it's not clear which object `setimmediate` was
+// able to install onto.  Search each possibility in the same order as the
+// `setimmediate` library.
+exports.setImmediate = (typeof self !== "undefined" && self.setImmediate) ||
+                       (typeof global !== "undefined" && global.setImmediate) ||
+                       (this && this.setImmediate);
+exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
+                         (typeof global !== "undefined" && global.clearImmediate) ||
+                         (this && this.clearImmediate);
+>>>>>>> tmp
 
 
 /***/ }),
+<<<<<<< HEAD
 /* 224 */
 /***/ (function(module, exports) {
+=======
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
+    "use strict";
+
+    if (global.setImmediate) {
+        return;
+    }
+>>>>>>> tmp
 
 /*
 Language: Smalltalk
@@ -78004,6 +78310,7 @@ module.exports = sqf;
 
 
 /***/ }),
+<<<<<<< HEAD
 /* 227 */
 /***/ (function(module, exports) {
 
@@ -78013,6 +78320,34 @@ module.exports = sqf;
  Website: https://en.wikipedia.org/wiki/SQL
  Category: common
  */
+=======
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(10)
+/* script */
+var __vue_script__ = __webpack_require__(44)
+/* template */
+var __vue_template__ = __webpack_require__(45)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/ExampleComponent.vue"
+>>>>>>> tmp
 
 function sql(hljs) {
   var COMMENT_MODE = hljs.COMMENT('--', '$');
@@ -78180,8 +78515,32 @@ module.exports = sql;
 
 
 /***/ }),
+<<<<<<< HEAD
 /* 228 */
 /***/ (function(module, exports) {
+=======
+/* 44 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+>>>>>>> tmp
 
 /*
 Language: Stan
@@ -78191,6 +78550,7 @@ Website: http://mc-stan.org/
 Category: scientific
 */
 
+<<<<<<< HEAD
 function stan(hljs) {
   // variable names cannot conflict with block identifiers
   var BLOCKS = [
@@ -78334,6 +78694,11 @@ function stan(hljs) {
     'rayleigh', 'scaled_inv_chi_square', 'skew_normal', 'student_t', 'uniform',
     'von_mises', 'weibull', 'wiener', 'wishart'
   ];
+=======
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+>>>>>>> tmp
 
   return {
     name: 'Stan',
@@ -78416,6 +78781,7 @@ module.exports = stan;
 
 
 /***/ }),
+<<<<<<< HEAD
 /* 229 */
 /***/ (function(module, exports) {
 
@@ -78427,6 +78793,38 @@ Description: Stata is a general-purpose statistical software package created in 
 Website: https://en.wikipedia.org/wiki/Stata
 Category: scientific
 */
+=======
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(47)
+}
+var normalizeComponent = __webpack_require__(10)
+/* script */
+var __vue_script__ = __webpack_require__(52)
+/* template */
+var __vue_template__ = __webpack_require__(56)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/SearchComponent.vue"
+>>>>>>> tmp
 
 /*
   This is a fork and modification of Drew McDonald's file (https://github.com/drewmcdonald/stata-highlighting). I have also included a list of builtin commands from https://bugs.kde.org/show_bug.cgi?id=135646.
@@ -78464,15 +78862,22 @@ function stata(hljs) {
         ]
       },
 
+<<<<<<< HEAD
       hljs.COMMENT('^[ \t]*\\*.*$', false),
       hljs.C_LINE_COMMENT_MODE,
       hljs.C_BLOCK_COMMENT_MODE
     ]
   };
 }
+=======
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+>>>>>>> tmp
 
 module.exports = stata;
 
+<<<<<<< HEAD
 
 /***/ }),
 /* 230 */
@@ -78484,6 +78889,34 @@ Contributors: Adam Joseph Cook <adam.joseph.cook@gmail.com>
 Description: Syntax highlighter for STEP Part 21 files (ISO 10303-21).
 Website: https://en.wikipedia.org/wiki/ISO_10303-21
 */
+=======
+// load the styles
+var content = __webpack_require__(48);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(50)("7acd5075", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6406c664\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SearchComponent.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6406c664\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SearchComponent.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(49)(false);
+// imports
+>>>>>>> tmp
 
 function step21(hljs) {
   var STEP21_IDENT_RE = '[A-Z_][A-Z0-9_.]*';
@@ -78537,7 +78970,11 @@ module.exports = step21;
 
 
 /***/ }),
+<<<<<<< HEAD
 /* 231 */
+=======
+/* 49 */
+>>>>>>> tmp
 /***/ (function(module, exports) {
 
 /*
@@ -78924,10 +79361,16 @@ function stylus(hljs) {
         className: 'selector-tag'
       },
 
+<<<<<<< HEAD
       // psuedo selectors
       {
         begin: '&?:?:\\b(' + PSEUDO_SELECTORS.join('|') + ')' + LOOKAHEAD_TAG_END
       },
+=======
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+>>>>>>> tmp
 
       // @ keywords
       {
@@ -78940,8 +79383,12 @@ function stylus(hljs) {
       // dimension
       hljs.CSS_NUMBER_MODE,
 
+<<<<<<< HEAD
       // number
       hljs.NUMBER_MODE,
+=======
+var listToStyles = __webpack_require__(51)
+>>>>>>> tmp
 
       // functions
       //  - only from beginning of line + whitespace
@@ -79233,10 +79680,16 @@ function taggerscript(hljs) {
     end: '%'
   };
 
+<<<<<<< HEAD
   var ESCAPE_SEQUENCE = {
     className: 'symbol',
     begin: /\\./
   };
+=======
+/***/ }),
+/* 51 */
+/***/ (function(module, exports) {
+>>>>>>> tmp
 
   return {
     name: 'Tagger Script',
@@ -79253,6 +79706,7 @@ module.exports = taggerscript;
 
 
 /***/ }),
+<<<<<<< HEAD
 /* 235 */
 /***/ (function(module, exports) {
 
@@ -79267,6 +79721,15 @@ Category: common, config
 */
 function yaml(hljs) {
   var LITERALS = 'true false yes no null';
+=======
+/* 52 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
+>>>>>>> tmp
 
   // Define keys as starting with a word character
   // ...containing word chars, spaces, colons, forward-slashes, hyphens and periods
@@ -79507,8 +79970,15 @@ module.exports = tcl;
 
 
 /***/ }),
+<<<<<<< HEAD
 /* 238 */
 /***/ (function(module, exports) {
+=======
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(54);
+>>>>>>> tmp
 
 /*
 Language: Thrift
@@ -79518,6 +79988,7 @@ Website: https://thrift.apache.org
 Category: protocols
 */
 
+<<<<<<< HEAD
 function thrift(hljs) {
   var BUILT_IN_TYPES = 'bool byte i16 i32 i64 double string binary';
   return {
@@ -79553,6 +80024,11 @@ function thrift(hljs) {
     ]
   };
 }
+=======
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+>>>>>>> tmp
 
 module.exports = thrift;
 
@@ -79568,6 +80044,7 @@ Description: FANUC TP programming language (TPP).
 */
 
 
+<<<<<<< HEAD
 function tp(hljs) {
   var TPID = {
     className: 'number',
@@ -79598,6 +80075,9 @@ function tp(hljs) {
       TPLABEL
     ]
   };
+=======
+module.exports = __webpack_require__(55);
+>>>>>>> tmp
 
   return {
     name: 'TP',
@@ -79657,7 +80137,11 @@ module.exports = tp;
 
 
 /***/ }),
+<<<<<<< HEAD
 /* 240 */
+=======
+/* 55 */
+>>>>>>> tmp
 /***/ (function(module, exports) {
 
 /*
@@ -80918,11 +81402,21 @@ function xquery(hljs) {
   };
 }
 
+<<<<<<< HEAD
 module.exports = xquery;
+=======
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+>>>>>>> tmp
 
 
 /***/ }),
+<<<<<<< HEAD
 /* 252 */
+=======
+/* 57 */
+>>>>>>> tmp
 /***/ (function(module, exports) {
 
 /*
@@ -80932,6 +81426,7 @@ module.exports = xquery;
  Website: https://zephir-lang.com/en
  */
 
+<<<<<<< HEAD
 function zephir(hljs) {
   var STRING = {
     className: 'string',
@@ -80969,6 +81464,11 @@ function zephir(hljs) {
     'char long unsigned bool int uint ulong uchar ' +
     // built-ins
     'true false null undefined';
+=======
+/***/ }),
+/* 58 */
+/***/ (function(module, exports) {
+>>>>>>> tmp
 
   return {
     name: 'Zephir',
@@ -81043,7 +81543,13 @@ function zephir(hljs) {
   };
 }
 
+<<<<<<< HEAD
 module.exports = zephir;
+=======
+/***/ }),
+/* 59 */
+/***/ (function(module, exports) {
+>>>>>>> tmp
 
 
 /***/ })
