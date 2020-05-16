@@ -1,5 +1,7 @@
 <div class="hero f-slider">
+
 	<div class="hero__wrapp">
+
 		<div class="hero__item hero-content">
 			<div class="hero-text">
 				<div class="hero-text__el">
@@ -26,4 +28,5 @@
 
 		</div>
 	</div>
+
 </div>
