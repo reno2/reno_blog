@@ -13,8 +13,10 @@
 
 Route::get('/blog/category/{slug?}', 'BlogController@category')->name('category');
 Route::get('/blog/article/{slug?}', 'BlogController@article')->name('article');
+Route::get('/blog/tag/{slug?}', 'BlogController@tag')->name('tag');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function(){
+
 	Route::get('/', 'DashboardController@dashboard')->name('admin.index');
 	Route::resource('/category', 'CategoryController', ['as'=> 'admin']);
 	Route::resource('/article', 'ArticleController', ['as'=> 'admin']);
@@ -23,10 +25,12 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
 			Route::resource('/user', 'UserController', ['as'=> 'user_managment']);
 	});
 
-	Route::post('/upload/image', 'ImageController@add')->name('img_add');
+		Route::post('/upload/image', 'ImageController@add')->name('img_add');
 
-	Route::resource('/tags', 'TagController', ['as'=> 'admin']);
+		Route::resource('/tags', 'TagController', ['as'=> 'admin']);
 
+		Route::get('/search', "ArticleController@search")->name('admin_search');
+		Route::get('/autocomplete', "ArticleController@autocomplete")->name('admin_autocomplete');
 
 });
 

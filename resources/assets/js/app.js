@@ -11,6 +11,8 @@ require('./bootstrap');
 
 
 
+require('./common.js');
+
 //require('@ttskch/select2-bootstrap4-theme');
 //import '/node_modules/bootstrap/dist/js/bootstrap';
 

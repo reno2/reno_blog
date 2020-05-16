@@ -3,39 +3,55 @@
 
 @section('content')
 
-        <div class="row">
+        <div class="row dash">
             <div class="col-sm-3">
-                <div class="jumbotron">
+                <div class="jumbotron dash-item dcat">
                     <p>
                         <span class="label label-primary">
                             Категорий {{$count_categories}}
                         </span>
                     </p>
+                    <div class="dash-item__icon">
+                        <img src="{{asset('/images/category128.png')}}" alt="">
+
+                    </div>
                 </div>
             </div>
             <div class="col-sm-3">
-                <div class="jumbotron">
+                <div class="jumbotron dash-item dpost">
                     <p>
                         <span class="label label-primary">
                             Материалов {{$count_articles}}
                         </span>
                     </p>
+                    <div class="dash-item__icon">
+                        <img src="{{asset('/images/title128.png')}}" alt="">
+
+                    </div>
                 </div>
             </div>
             <div class="col-sm-3">
-                <div class="jumbotron">
+                <div class="jumbotron dash-item dusers">
                     <p>
                         <span class="label label-primary">
-                            Поситители 0
+                            Пользователей {{$count_users}}
                         </span>
                     </p>
+                    <div class="dash-item__icon">
+                        <img src="{{asset('/images/followers.png')}}" alt="">
+
+                    </div>
+                    <div class="dash-item__icon">
+
+
+                    </div>
                 </div>
             </div>
             <div class="col-sm-3">
-                <div class="jumbotron">
+                <div class="jumbotron dash-item dtoday">
                     <p>
                         <span class="label label-primary">
-                            Сегодня 0
+                            Потом что-нибудь выведу
                         </span>
                     </p>
                 </div>

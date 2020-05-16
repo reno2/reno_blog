@@ -14,32 +14,34 @@
             @slot('active') Редактирование @endslot
         @endcomponent
         <div class="row">
-            <div class="col-sm-9">
-                <form сlass="form-horizontal" action="{{route('admin.category.update', $category)}}" method="post">
-                    <input type="hidden" name="_method" value="put">
-                    {{csrf_field()}}
-                    {{-- Form include--}}
-                    @include('admin.categories.partials.form')
-                    <input type="hidden" name="image" value="" id="category-img">
-                </form>
-            </div>
-            <div class="col-sm-3">
-                <div class="cart">
-                    <div class="card-body">
-                        <form onsubmit="return upload()" action="{{route('img_add')}}"  enctype="multipart/form-data">
 
-                            <div class="form-group">
-                                <input name="image" type="file" id="file_">
+                <div class="col-sm-9">
+                    <form сlass="form-horizontal" id="aform" action="{{route('admin.category.update', $category)}}" method="post">
+                        <input type="hidden" name="_method" value="put">
+                        {{csrf_field()}}
+                        {{-- Form include--}}
+                        @include('admin.categories.partials.form')
+                        <input type="hidden" name="image" value="{{$category->image ?? ''}}" id="category-img">
+                    </form>
+                </div>
+                <div class="col-sm-3">
+                    <div class="cart">
+                        <div class="card-body">
+                            <form id="aform"  onsubmit="return upload()" action="{{route('img_add')}}"  enctype="multipart/form-data">
+
+                                <div class="form-group">
+                                    <input name="image" type="file" id="file_">
+                                </div>
+                                <button class="btn-block btn btn-success" type="submit">загрузить</button>
+                            </form>
+                            <div>
+                                <img src="{{$category->image ?? ''}}" @if(!isset($category->image))style="display: none;"@endif id="post_img" class="img-fluid"  alt="">
                             </div>
-                            <button class="btn-block btn btn-success" type="submit">загрузить</button>
-                        </form>
-                        <div>
-                            <img src="{{$category->image or ''}}" @if(!isset($category->image))style="display: none;"@endif id="post_img" class="img-fluid"  alt="">
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+
 
 
 
@@ -71,5 +73,6 @@
 
         return false;
     }
+
 
 </script>

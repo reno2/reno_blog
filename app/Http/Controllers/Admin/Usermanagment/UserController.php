@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Usermanagment;
 
 use App\User;
+use App\Role;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -28,8 +29,10 @@ class UserController extends Controller
      */
     public function create()
     {
+				$roles = Role::all();
         return view('user_managment.users.create', [
-        		'user' => []
+        		'user' => [],
+		        'roles' => $roles
         ]);
     }
 
@@ -46,11 +49,12 @@ class UserController extends Controller
 				    'email' => 'required|string|email|max:255|unique:users',
 				    'password' => 'required|string|min:6|confirmed',
 		    ]);
-		    User::create([
+		    $user = User::create([
 		    	  	'name' => $request['name'],
 		    	  	'email' => $request['email'],
 		    	  	'password' => bcrypt($request['password']),
 		    ]);
+		    $user->roles()->attach($request->input('role'));
 		    return redirect()->route('user_managment.user.index');
     }
 
@@ -73,7 +77,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('user_managment.users.edit', ['user'=>$user]);
+		    $roles = Role::all();
+        return view('user_managment.users.edit', ['user'=>$user, 'roles' => $roles]);
     }
 
     /**
@@ -85,6 +90,11 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+		    $user->roles()->detach();
+
+
+
+
     		//dd($request);
 		    $validator = $request->validate([
 				    'name' => 'required|string|max:255',
@@ -99,6 +109,10 @@ class UserController extends Controller
 		    $user->email = $request['email'];
 		    $request['password'] == null ?: $user->password = bcrypt($request['password']);
 		    $user->save();
+
+		    if($request->input('role')):
+				    $user->roles()->attach($request->input('role'));
+		    endif;
 
 
 		    return redirect()->route('user_managment.user.index');

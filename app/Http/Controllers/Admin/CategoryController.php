@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Validation\Rule;
 class CategoryController extends Controller
 {
     /**
@@ -15,10 +15,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
+    		$categories = Category::paginate(10);
         //list
-		    return view('admin.categories.index', [
-		    		'categories' => Category::paginate(10)
-		    ]);
+		    return view('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -83,7 +82,16 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        $category->update($request->except('slug'));
+//        $category->update($request->except('slug'));
+
+		    $this->validate($request, [
+				    'slug' => Rule::unique('categories')->ignore($category->id, 'id'),
+				    'title' => 'required'
+		    ]);
+
+
+		    $category->update($request->all());
+        session()->flash('message', "Категория  изменена");
 		    return redirect()->route('admin.category.index');
     }
 

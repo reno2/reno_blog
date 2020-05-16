@@ -7,14 +7,15 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
-    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+{{--    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>--}}
+{{--    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">--}}
+    <title>{!!  MetaTag::tag('title') !!}</title>
 
 
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/backend.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app" class="admin">
@@ -27,9 +28,17 @@
         </div>
         <div class="apage marea flex-fill">
             @include('admin.components.top')
-            <div class="container-fluid pl-5 pr-5">
-             @yield('content')
+
+            <div class="marea-middle marea__item">
+                @include('chunks.messeges')
+
+                @include('chunks.errors')
+
+                <div class="container-fluid pt-5 pl-5 pr-5">
+                 @yield('content')
+                </div>
             </div>
+            @include('admin.components.footer')
         </div>
     </div>
 </div>
@@ -46,9 +55,14 @@
     setTimeout(function(){
         var konten = document.getElementById("description");
         CKEDITOR.replace(konten,{
-            language:'en-gb'
+            language:'en-gb',
+            extraPlugins: 'coder'
         });
         CKEDITOR.config.allowedContent = true;
+        CKEDITOR.config.entities = true;
+        //CKEDITOR.config.htmlEncodeOutput = false;
+
+
     }, 400)
 </script>
 

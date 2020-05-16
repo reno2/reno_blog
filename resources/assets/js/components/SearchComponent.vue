@@ -1,6 +1,6 @@
 <template>
-	<div  :class="place" class="dmenu__el del__search navbar-nav rsearch">
-		<form action="/search">
+	<div :class="place" class="dmenu__el del__search navbar-nav rsearch">
+		<form :action="action">
 			<div class="rsearch__el rsearch-in">
 				<input autocomplete="off" @input="send" placeholder="Поиск..." v-model="value" type="text" name="q" id="search" class="rsearch-in__input rsearch__input">
 
@@ -9,8 +9,6 @@
 				<button class="rsearch__input rsearch-btn__submit" type="submit"><i class="fas fa-search"></i></button>
 			</div>
 
-
-
 		</form>
 
 			<div class="searche-resalts">
@@ -18,7 +16,7 @@
 				<div v-if="showRes==true" class="searche-results__wrp">
 					<ul>
 						<li v-for="item in this.results" :key="item.id">
-							<span v-html="item.title"></span>
+							<a :href="`/blog/article/${item.href}`"><span v-html="item.title"></span></a>
 						</li>
 					</ul>
 				</div>
@@ -32,6 +30,14 @@
     export default {
         props: {
             place: String,
+		        action: {
+                default: '/search',
+                type: String
+            },
+		        autocomplete: {
+                type: String,
+				        default: '/autocomplete'
+            }
         },
         data (){
             return {
@@ -45,19 +51,24 @@
         },
 		    methods:{
             async send(){
+               //console.log(`${this.autocomplete}?q=${this.value}`)
 								if(this.value.length > 2) {
-                    const res = await axios.get('/autocomplete?q=' + this.value)
-										console.log(res)
+                    const res = await axios.get(`${this.autocomplete}?q=${this.value}`)
+										//console.log(res)
                     if (res.data.length > 0) {
 												let nData = [];
                         res.data.forEach((el)=>{
-                           el.title = (el.title.replace(new RegExp(this.value, "ig"), `<b>${this.value}</b>`));
+                            let obj = {}
+                            obj.title = el.title.replace(new RegExp(this.value, "ig"), `<b>${this.value}</b>`)
+                            obj.href = el.slug
+		                        //el.title = el.title.replace(new RegExp(this.value, "ig"), `<b>${this.value}</b>`)
 
-                           nData.push(el)
-                            // console.log(el)
-                            // console.log(this.value)
+
+                           nData.push(obj)
+                           //nData.push(el)
+
                         })
-                        console.log(nData)
+                        //console.log(nData)
                         this.results = nData
                         this.showRes = true
                     } else {
@@ -97,6 +108,7 @@
 					width: 100%;
 					border-radius: 0 !important;
 					border:1px solid #e9ecef !important;
+					background: #e9ecef;
 				}
 
 			}
@@ -117,6 +129,8 @@
 		position: absolute;
 		bottom: 10px;
 		z-index: 9;
+		left: 25%;
+		bottom: -7%;
 		.searche-results__wrp{
 			position: absolute;
 			top: 0;
@@ -128,6 +142,9 @@
 				list-style-type:none;
 				padding-left: 16px;
 				padding-top: 6px;
+				a{
+					color: #333;
+				}
 			}
 		}
 	}
