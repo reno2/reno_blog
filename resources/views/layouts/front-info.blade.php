@@ -1,8 +1,8 @@
 <div class="info">
     <div class="container">
-        <div class="row">
+        <div class="row s-block__lime_topl">
 
-            <div class="info__item s-block s-block__lime_topl">
+            <div class="info__item s-block">
                 <div class="s-block__icon"><img src="/images/service1.png" alt=""></div>
                 <div class="s-block__title">Разработка</div>
                 <div class="s-block__text">Разработка на популярныз CMS оптыт в реализованных задачах</div>
