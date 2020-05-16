@@ -132,6 +132,7 @@ flex: 1 0 auto;
       text-transform: uppercase;
       line-height: 100%;
       font-size: 90px;
+      color: #3e3b56;
       @include desc{
         font-size: 70px ;
       }
@@ -177,6 +178,12 @@ flex: 1 0 auto;
   }
 }
 .s-block{
+  position: relative;
+  transition: 500ms all;
+  &:hover{
+    transform: translateY(-30px);
+    transition: 500ms all;
+  }
   .s-block__icon{
     img {
       width: 80px;
@@ -194,17 +201,41 @@ flex: 1 0 auto;
     font-family: $gilroy;
   }
 }
+.s-block__lime_bottomr{
+  position: relative;
+  &:after {
+    position: absolute;
+    content: "";
+    background: url('/images/lime.png');
+    z-index: 0;
+  }
+}
+.s-block__lime_topl{
+  position: relative;
+  &:after {
+    position: absolute;
+    content: "";
+    background: url(/images/lime.png);
+    z-index: -1;
+    transform: translateX(-25%);
+    width: 250px;
+    height: 250px;
+    margin-left: -125px;
+    top:-28%;
+  }
+}
 //start info
 
 //end info
 
 //top bar
 .navbar{
-  background: #ffffff !important;
+  background: #ffd017 !important;
+  border-bottom: 1px solid #eee;
   .navbar__logo{
     border-right: 1px solid #eee;
     flex-basis: 15%;
-    background: #fecf37;
+    background: #ffd017;
     padding-left: 10px;
     .navbar-brand{
       padding: 14px 0;
@@ -262,7 +293,7 @@ flex: 1 0 auto;
       }
       .del__user{
         flex-basis: 12%;
-        background: #2f2e41;
+        background: #3e3b56;
         li{
           width: 100%;
           text-align: center;
