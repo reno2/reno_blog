@@ -1,12 +1,4 @@
 
-// setTimeout(function(){
-//     document.querySelector('.info_admin').classList.add('hide');
-//
-// }, 2000);
-
-
-
-
 
 $(document).ready(()=>{
 
