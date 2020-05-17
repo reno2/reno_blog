@@ -6180,11 +6180,10 @@ readers do not read off random characters that represent icons */
 }
 
 .hero-text {
-  position: absolute;
-  -webkit-transform: translate(-500px, -50%);
-          transform: translate(-500px, -50%);
+  position: relative;
+  -webkit-transform: translate(0px, -50%);
+          transform: translate(0px, -50%);
   top: 50%;
-  opacity: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6220,9 +6219,20 @@ readers do not read off random characters that represent icons */
 }
 
 .hero-text .hero-text__el {
+  position: relative;
+}
+
+.hero-text .hero-text__el.hero-text__one {
+  opacity: 0;
+  -webkit-transform: translateX(-1000px) skewX(45deg);
+          transform: translateX(-1000px) skewX(45deg);
+}
+
+.hero-text .hero-text__el.hero-text__last {
+  -webkit-transform: translateX(-38%);
+          transform: translateX(-38%);
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  position: relative;
 }
 
 .hero-text .hero-text__el .hero-text__top {
@@ -6232,6 +6242,7 @@ readers do not read off random characters that represent icons */
   position: absolute;
   -webkit-transform: translate(-38%, -50%) rotateX(90deg);
           transform: translate(-38%, -50%) rotateX(90deg);
+  opacity: 0;
   color: #ffffff;
   text-transform: uppercase;
 }
@@ -6521,6 +6532,30 @@ readers do not read off random characters that represent icons */
 
 .navbar .navbar__menu .dmenu .del__user li a i {
   margin-right: 5px;
+}
+
+.navbar .navbar__menu .dmenu .del__user li a.auth {
+  font-weight: 100;
+  font-size: 14px;
+  text-transform: inherit;
+}
+
+.navbar .navbar__menu .dmenu .del__user li .dropdown-menu {
+  width: 100%;
+  -webkit-box-shadow: 0 12px 17px -4px #848484;
+          box-shadow: 0 12px 17px -4px #848484;
+  background-color: #3e3b56;
+}
+
+.navbar .navbar__menu .dmenu .del__user li .dropdown-menu a {
+  color: #f2f2f2;
+  font-weight: 100;
+  font-size: 12px;
+  text-align: center;
+}
+
+.navbar .navbar__menu .dmenu .del__user li .dropdown-menu a:hover {
+  background-color: #34314c;
 }
 
 html,
