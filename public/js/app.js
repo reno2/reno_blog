@@ -39880,9 +39880,8 @@ module.exports = function spread(callback) {
 
 /***/ }),
 /* 38 */
-/***/ (function(module, __webpack_exports__) {
+/***/ (function(module, exports) {
 
-"use strict";
 
 
 $(document).ready(function () {

@@ -4,7 +4,7 @@
 
 		<div class="hero__item hero-content">
 			<div class="hero-text">
-				<div class="hero-text__el">
+				<div class="hero-text__el hero-text__one">
 					<div class="hero-text__top">заметк разработчика</div>
 					<div class="hero-text__midd hero-text_bold">Всё о </div>
 					<div class="hero-text__bott hero-text_bold">web </div>
@@ -23,10 +23,10 @@
 		</div>
 
 		<div class="hero__item hero-img">
-
 			<img src="/images/front/man1.png" alt="">
-
 		</div>
+
 	</div>
 
 </div>
+

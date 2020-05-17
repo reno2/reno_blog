@@ -151,7 +151,9 @@ class ArticleController extends Controller
 				    endif;
 
 				    session()->flash('message', "Категория  изменена " . $article->title);
-				    if(in_array('reload', $r, true))
+				 
+				 
+				    if(array_key_exists ('reload', $r))
 				    {
 						    $tags  = \App\Tag::all();
 						    $tags2 = [];

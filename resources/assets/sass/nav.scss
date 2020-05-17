@@ -80,6 +80,25 @@
             i{
               margin-right: 5px;
             }
+            &.auth{
+              font-weight: 100;
+              font-size: 14px;
+              text-transform: inherit;
+            }
+          }
+          .dropdown-menu{
+            width: 100%;
+            box-shadow: 0 12px 17px -4px #848484;
+            background-color: #3e3b56;
+            a{
+              color: #f2f2f2;
+              font-weight: 100;
+              font-size: 12px;
+              text-align: center;
+              &:hover{
+                background-color: (#3e3b56)-10%;
+              }
+            }
           }
         }
       }

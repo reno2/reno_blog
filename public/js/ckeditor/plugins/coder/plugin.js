@@ -3,7 +3,19 @@ CKEDITOR.plugins.add( 'coder', {
     init: function( editor ) {
         editor.addCommand( 'insertCoder', {
             exec: function( insertCoder ) {
-                editor.insertHtml( '<code class="inner">' + editor.getSelection().getSelectedText() + '</code>' );
+                let reg = /(<code.+>)(.*)(<\/.+>)/;
+                let data = editor.getSelection().getStartElement().getOuterHtml();
+                if(reg.test(editor.getSelection().getStartElement().getOuterHtml())){
+                    //console.log('true')
+                    let res = data.replace(reg, '$2')
+                    editor.insertHtml( res );    
+
+                }else{
+                      
+                      editor.insertHtml( '<code class="inner">' + editor.getSelection().getSelectedText() + '</code>' );    
+                }
+                //editor.insertHtml( '<code class="inner">' + editor.getSelection().getSelectedText() + '</code>' );
+                //console.log(editor.getSelection().getStartElement().getOuterHtml());
             }
         });
         editor.ui.addButton( 'coder', {
