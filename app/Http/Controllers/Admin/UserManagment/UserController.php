@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Usermanagment;
+namespace App\Http\Controllers\Admin\UserManagment;
 
 use App\User;
 use App\Role;

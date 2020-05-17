@@ -35,7 +35,12 @@ class ImageController extends Controller
 		   // $path = storage_path($tt);
 
 		    $path = 'public/categories/' .  $filename;
-		    $image = Image::make($request->file('image'))->fit(300, 300);
+		   
+            // $image = Image::make($request->file('image'))->fit(300, 300);
+            $image= Image::make($request->file('image'))->fit(300, 300, function ($constraint) {
+                 $constraint->upsize();
+            }, 'center');
+
 		    $bb =  Storage::put($path, (string) $image->encode());
 
 		    if($bb)
