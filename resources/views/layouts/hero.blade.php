@@ -5,9 +5,9 @@
 		<div class="hero__item hero-content">
 			<div class="hero-text">
 				<div class="hero-text__el hero-text__one">
-					<div class="hero-text__top">заметк разработчика</div>
-					<div class="hero-text__midd hero-text_bold">Всё о </div>
-					<div class="hero-text__bott hero-text_bold">web </div>
+					<div class="hero-text__top">development</div>
+					<div class="hero-text__midd hero-text_bold"><span class="brackets">{</span>Web<span class="brackets">}</span></div>
+					<div class="hero-text__bott hero-text_bold">blog</div>
 				</div>
 				<div class="hero-text__deved">
 					<div class="hero-text__bb"></div>

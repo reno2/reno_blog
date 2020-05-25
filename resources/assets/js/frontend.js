@@ -14,13 +14,13 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 function hero1() {
-    // TweenMax.to(".hero-text", 1.5, {
-    //     delay: 0,
-    //     x: "0%",
-    //     y: "0%",
-    //     opacity: 1,
-    //     ease: Expo.easeInOut
-    // });
+    TweenMax.to(".hero-text", 1.5, {
+        delay: 0,
+        x: "0%",
+        y: "0%",
+        opacity: 1,
+        ease: Expo.easeInOut
+    });
 
     TweenMax.to(".hero-text__one", 3, {
         delay: 0.5,
@@ -50,7 +50,10 @@ function hero1() {
         delay: 1.5,
         x: "0%",
         opacity: 1,
-        ease: "circ.out"
+        ease: "circ.out",
+        onComplete: function(){
+            document.querySelector('.hero-item__last').classList.add('done')
+        }
     });
 
 
