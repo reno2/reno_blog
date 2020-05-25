@@ -15,30 +15,13 @@
     @endcomponent
 
     <div class="article">
-        <div class="container">
+        <div class="container pb-4">
             <div class="row">
                 {{ Breadcrumbs::render('article', $article->categories->first(), $article) }}
             </div>
         </div>
 
         <div class="container">
-
-        <div class="hero-text__el hero-item__last hero-text">
-
-            <div class="hero-text__words">
-                <div class="hero-text__word">
-                    <div class="hero-text__first hero-text_white">bitrix</div>
-                    <div class="hero-text__first hero-text_white">javascr5ipt</div>
-                </div>
-                <div class="hero-text__word">
-                    <div class="hero-text__first hero-text_white">vue</div>
-                    <div class="hero-text__first hero-text_white">PHP</div>
-                </div>
-            
-            </div>
-           
-        </div>
-
 
 
             <div class="row ">
