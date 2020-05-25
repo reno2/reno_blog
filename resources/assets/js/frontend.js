@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 function hero1() {
-    TweenMax.to(".hero-text", 1.5, {
+    TweenMax.to(".hero-text", 0.5, {
         delay: 0,
         x: "0%",
         y: "0%",
@@ -22,7 +22,7 @@ function hero1() {
         ease: Expo.easeInOut
     });
 
-    TweenMax.to(".hero-text__one", 3, {
+    TweenMax.to(".hero-text__one", 1, {
         delay: 0.5,
         translateX: 0,
         skewX: 0,
