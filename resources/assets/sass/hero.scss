@@ -48,7 +48,7 @@
   .hero-text__el{
     &.hero-text__one{
       opacity: 0;
-      transform: translateX(-1000px) skewX(45deg);
+      transform: translateX(-400px) skewX(45deg);
     }
     &.hero-text__last{
       transform: translateX(-38%);
@@ -56,19 +56,24 @@
     }
 
     .hero-text__top{
-      font-weight: 100;
+      font-weight: 900;
       font-family: gilroy;
-      left: 0;
-      position: absolute;
-      transform: translate(-38%, -50%) rotateX(90deg);
+      //left: 0;
+      //position: absolute;
+      //transform: translate(-38%, -50%) rotateX(90deg);
       opacity: 0;
-
+      letter-spacing: 10px;
+      text-align: center;
+      font-weight: 900;
+      margin-bottom: -10px;
       color: #ffffff;
       text-transform: uppercase;
-
+      font-size: 10px;
     }
     .hero-text__midd{
-
+      .brackets{
+        color:#e7e7e7;
+      }
     }
     .hero-text__bott{
 

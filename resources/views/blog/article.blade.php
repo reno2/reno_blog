@@ -23,6 +23,23 @@
 
         <div class="container">
 
+        <div class="hero-text__el hero-item__last hero-text">
+
+            <div class="hero-text__words">
+                <div class="hero-text__word">
+                    <div class="hero-text__first hero-text_white">bitrix</div>
+                    <div class="hero-text__first hero-text_white">javascr5ipt</div>
+                </div>
+                <div class="hero-text__word">
+                    <div class="hero-text__first hero-text_white">vue</div>
+                    <div class="hero-text__first hero-text_white">PHP</div>
+                </div>
+            
+            </div>
+           
+        </div>
+
+
 
             <div class="row ">
 {{--                <div class="col">--}}
