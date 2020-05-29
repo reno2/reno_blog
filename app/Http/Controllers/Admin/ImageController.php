@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -51,6 +52,25 @@ class ImageController extends Controller
 				    ]);
 				}
     }
+
+		public function upload(Request $request){
+				$errorMessage = 'Не удалось загрузить изображение';
+				if($request->hasFile('upload')) {
+						$f = $request->file('upload');
+						$filename = time().$request->file('upload')->getClientOriginalName();
+						$path = Storage::putFileAs( 'public/article', $request->file('upload'), $filename);
+						if($path){
+								$url = Storage::url($path);
+								$res = "window.parent.CKEDITOR.tools.callFunction(1,'{$url}','good')";
+						}else{
+								$res = 'alert(Не удалось загрузить файл)';
+						}
+				}else{
+						$res = 'alert(Файл не выбран)';
+				}
+				@header('Content-type: text/html; charset=utf-8');
+				echo '<script>'.$res.'</script>';
+		}
 
     /**
      * Show the form for creating a new resource.

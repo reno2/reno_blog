@@ -14,6 +14,8 @@ use Mockery\Exception;
 
 class ArticleController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
