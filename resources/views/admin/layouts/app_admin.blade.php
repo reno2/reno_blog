@@ -56,7 +56,9 @@
         var konten = document.getElementById("description");
         CKEDITOR.replace(konten,{
             language:'en-gb',
-            extraPlugins: 'coder'
+            extraPlugins: 'coder',
+            filebrowserUploadUrl: '{{route('ckeditor.upload', ['_token' => csrf_token() ])}}',
+            filebrowserUploadMethod: 'form'
         });
         CKEDITOR.config.allowedContent = true;
         CKEDITOR.config.entities = true;

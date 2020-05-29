@@ -21,9 +21,14 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
 	Route::resource('/category', 'CategoryController', ['as'=> 'admin']);
 	Route::resource('/article', 'ArticleController', ['as'=> 'admin']);
 
+
 	Route::group(['prefix' => 'user_managment', 'namespace' => 'UserManagment'], function(){
 			Route::resource('/user', 'UserController', ['as'=> 'user_managment']);
 	});
+
+
+
+		Route::post('/upload/fileUpload', 'ImageController@upload')->name('ckeditor.upload');
 
 		Route::post('/upload/image', 'ImageController@add')->name('img_add');
 
