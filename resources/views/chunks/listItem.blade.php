@@ -6,9 +6,13 @@
         @include('chunks.check_admin')
         <h5 class="card-title"><a href="{{route('article', $article->slug)}}">{{$article->title}}</a></h5>
         <div class="cart-category">
-            <a href="/blog/category/{{$article->categories->pluck('slug')->first()}}">
+
+            <a  class="cart-category__el" href="/blog/category/{{$article->categories->pluck('slug')->first()}}">
                 <i class="fas fa-folder-open"></i> &nbsp; {{$article->categories->pluck('title')->first()}}
             </a>
+            <span class="cart-category__el">
+                <span class="cart-category__date">{{Carbon\Carbon::parse($article->created_at)->format('d.m.y H:i')}}</span>
+            </span>
         </div>
 
         <p class="card-text f-gilroy">{!! $article->description_short !!}</p>

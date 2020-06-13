@@ -11,7 +11,7 @@
     @endcomponent
 
         <hr>
-        <a href="{{route('admin.category.create')}}" class="btn btn-primary pull-right"><i class="fas fa-plus-square"></i> Создать категорию</a>
+        <a href="{{route('admin.category.create')}}" class="btn btn-primary pull-right"><i class="fas fa-plus-square"></i> Создать категорию1</a>
         <table class="table table-striped">
             <thead>
             <th>Наименование</th>
@@ -25,7 +25,6 @@
             <tbody>
             @forelse($categories as $category)
 
-
                 <tr>
                     <td>{{$category->title}}</td>
                     <td>{{$category->published}}</td>
@@ -37,6 +36,8 @@
                             {{csrf_field()}}
                             <button type="submit" class="btn btn-default"><i class="fas fa-trash-alt"></i></button>
                             <a class="btn btn-default" href="{{route('admin.category.edit', $category)}}"><i class="fas fa-edit"></i></a>
+                            <a class="btn btn-default" href="{{route('admin.category.show', $category)}}"><i class="fas fa-share"></i></a>
+                        
                         </form>
 
                     </td>

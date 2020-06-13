@@ -27,9 +27,7 @@ class ArticleController extends Controller
     		//MetaTag\
     		if($request->get('sort')){
     				$sort = $request->get('sort');
-
     				$articles = Article::orderBy('sort', $sort)->paginate(10);
-
 		    }
     	  else{
 			      $articles = Article::orderBy('sort', 'desc')->orderBy('created_at', 'desc')->paginate(10);

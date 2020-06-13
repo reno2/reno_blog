@@ -90,7 +90,8 @@ flex: 1 0 auto;
 .article{
   pre code{
     padding: 30px !important;
-    border-left: 2px solid #009aa8;
+    font-size: 13px;
+    //border-left: 2px solid #009aa8;
     .indent{
       display: inline-block;
       width: 20px;

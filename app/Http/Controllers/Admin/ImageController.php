@@ -33,10 +33,6 @@ class ImageController extends Controller
     {
 
 		    $filename = time().$request->file('image')->getClientOriginalName();
-
-			//$tt = Storage::putFileAs( 'category', $request->file('image'), $filename);
-		   // $path = storage_path($tt);
-
 		    $path = 'public/categories/' .  $filename;
 		   
             // $image = Image::make($request->file('image'))->fit(300, 300);
