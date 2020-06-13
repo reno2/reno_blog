@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Article;
 use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -27,6 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
+    		$oo = Category::with('children')->where('parent_id', 0)->get();
         return view('admin.categories.create', [
         		'category' => [],
 		        'categories' => Category::with('children')->where('parent_id', 0)->get(),
@@ -46,15 +48,31 @@ class CategoryController extends Controller
         return redirect()->route('admin.category.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Category  $category
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Category $category)
+		/**
+		 * Display the specified resource.
+		 *
+		 * @param \App\Category $category
+		 * @param Request       $request
+		 *
+		 * @return \Illuminate\Http\Response
+		 */
+    public function show(Category $category, Request $request)
     {
-        //
+
+		    if($request->get('sort')){
+				    $sort = $request->get('sort');
+				    $articles = $category->articles()->orderBy('sort', $sort)->paginate(12);
+		    }
+		    else{
+				    $articles = $category->articles()->orderBy('sort', 'desc')->orderBy('created_at', 'desc')->paginate(12);
+		    }
+
+    		//$articles = $category->articles()->paginate(12);
+
+		    return view('admin.categories.show', [
+				    'articles' => $articles,
+				    'category_name' => $category->title
+		    ]);
     }
 
     /**

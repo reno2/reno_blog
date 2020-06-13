@@ -12137,18 +12137,37 @@ fw900 {
   color: #009aa8a6;
 }
 
+h5.card-title a {
+  font-size: 16px;
+  color: #333;
+  font-weight: 900;
+}
+
 .cart-category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart-category a.cart-category__el {
   background: #009aa8;
   display: inline-block;
   padding: 2px 12px;
   font-size: 10px;
   border-radius: 10px;
   color: #fff;
-  margin-bottom: 10px;
+  font-family: Gilroy;
 }
 
-.cart-category a {
-  color: #fff;
+.cart-category .cart-category__el .cart-category__date {
+  font-size: 10px;
   font-family: Gilroy;
 }
 

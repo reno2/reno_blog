@@ -1,6 +1,6 @@
 
 import hljs from 'highlight.js';
-
+import 'highlight.js/styles/monokai.css';
 document.addEventListener('DOMContentLoaded', function(){
 
 
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     hero1();
 
-})
+});
 
 
 
@@ -21,6 +21,7 @@ function hero1() {
         opacity: 1,
         ease: Expo.easeInOut
     });
+
 
     TweenMax.to(".hero-text__one", 1, {
         delay: 0.5,

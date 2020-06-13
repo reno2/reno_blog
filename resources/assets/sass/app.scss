@@ -150,18 +150,33 @@ fw900{
     }
   }
 }
-
-.cart-category {
-  background: #009aa8;
-  display: inline-block;
-  padding: 2px 12px;
-  font-size: 10px;
-  border-radius: 10px;
-  color: #fff;
-  margin-bottom: 10px;
+h5.card-title{
   a{
+    font-size: 16px;
+    color: #333;
+    font-weight: 900;
+  }
+}
+.cart-category {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  align-items: center;
+  a.cart-category__el {
+    background: #009aa8;
+    display: inline-block;
+    padding: 2px 12px;
+    font-size: 10px;
+    border-radius: 10px;
     color: #fff;
     font-family: Gilroy;
+  }
+  .cart-category__el{
+    .cart-category__date{
+      font-size: 10px;
+
+      font-family: Gilroy;
+    }
   }
 }
 

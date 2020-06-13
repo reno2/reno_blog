@@ -7,6 +7,8 @@ use App\Category;
 use App\Article;
 use App\Tag;
 use MetaTag;
+use Illuminate\Support\Facades\Storage;
+
 class BlogController extends Controller
 {
     //
@@ -20,7 +22,8 @@ class BlogController extends Controller
 
 		public function category($slug){
 
-
+				$p = ('public/categories/1589742371undraw_code_thinking_1jeh.png');
+				$t = Storage::url($p);
 
 				$category = Category::where('slug', $slug)->first();
 				MetaTag::setTags(['title'=> $category->title]);

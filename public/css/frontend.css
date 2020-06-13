@@ -6619,7 +6619,7 @@ body {
 
 .article pre code {
   padding: 30px !important;
-  border-left: 2px solid #009aa8;
+  font-size: 13px;
 }
 
 .article pre code .indent {
