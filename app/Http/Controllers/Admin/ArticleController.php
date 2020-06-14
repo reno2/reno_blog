@@ -30,7 +30,7 @@ class ArticleController extends Controller
     				$articles = Article::orderBy('sort', $sort)->paginate(10);
 		    }
     	  else{
-			      $articles = Article::orderBy('sort', 'desc')->orderBy('created_at', 'desc')->paginate(10);
+			      $articles = Article::orderBy('created_at', 'desc')->paginate(10);
 	      }
         return view('admin.articles.index',
 
