@@ -11,7 +11,7 @@
     @endcomponent
 
         <hr>
-        <a href="{{route('admin.category.create')}}" class="btn btn-primary pull-right"><i class="fas fa-plus-square"></i> Создать категорию1</a>
+        <a href="{{route('admin.category.create')}}" class="btn btn-primary pull-right"><i class="fas fa-plus-square"></i> Создать категорию</a>
         <table class="table table-striped">
             <thead>
             <th>Наименование</th>
