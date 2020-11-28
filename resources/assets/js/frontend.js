@@ -1,6 +1,6 @@
 
 import hljs from 'highlight.js';
-import 'highlight.js/styles/monokai.css';
+import 'highlight.js/styles/atom-one-dark-reasonable.css';
 document.addEventListener('DOMContentLoaded', function(){
 
 
