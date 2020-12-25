@@ -6600,6 +6600,11 @@ body {
   font-size: 12px;
 }
 
+.tags.big .tags__item {
+  font-size: 16px;
+  padding: 8px 24px;
+}
+
 .breadcrumb {
   background: #fecf37;
   color: #333;
