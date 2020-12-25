@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\widgets\Contract;
+namespace App\Widgets\Contract;
 
 
 interface ContractWidget
