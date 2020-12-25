@@ -177,12 +177,13 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-		    // Other
-		    App\Providers\BlogServiceProvider::class,
+        // Other
+        App\Providers\BlogServiceProvider::class,
 
-				Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
-		    Intervention\Image\ImageServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        App\Providers\WidgetServiceProvider::class,
 
 
 
@@ -237,7 +238,7 @@ return [
 
 
         'Image' => Intervention\Image\Facades\Image::class,
-				'MetaTag' => Fomvasss\LaravelMetaTags\Facade::class,
+        'MetaTag' => Fomvasss\LaravelMetaTags\Facade::class,
 
     ],
 
